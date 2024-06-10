@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #780096, #FF0082);
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.language-dropdown {
+    position: absolute;
+    left: 20px;
+}
+
+.language-dropdown select {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the logo and title horizontally */
+    flex-direction: column; /* Stack the logo and title vertically on mobile */
+    text-align: center; /* Center the title text */
+}
+
+.logo {
+    height: 50px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add some space between the logo and title */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('path/to/doodle-background.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+
+.video-container {
+    width: 80%; /* Adjust the width for mobile */
+    max-width: 300px; /* Limit the width for larger screens */
+    position: relative;
+    margin: 20px 0;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border: 5px solid #FF0082;
+    border-radius: 10px;
+}
+
+.hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    justify-content: center;
+}
+
+.hashtags span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hashtags span:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ad-sticker {
+    position: absolute;
+    top: 20px; /* Adjust the top position */
+    right: 20px; /* Adjust the right position */
+    padding: 10px 20px;
+    background-color: #F5D200;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin-right: 20px;
+}
+
+ 
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF0082;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #D7006E;
+}
+ 
+
+.button-group {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    min-width: 160px;
+
+
+}
+
+
+.button-group:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+ 
+
+
+@media (min-width: 768px) {
+    .logo-container {
+        flex-direction: row; /* Align logo and title horizontally */
+        align-items: center;
+    }
+
+    .title {
+        margin-left: 10px; /* Add some space between logo and title */
+    }
+
+    .video-container {
+        width: 50%; /* Adjust the width for larger screens */
+    }
+}
