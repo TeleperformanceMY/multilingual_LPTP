@@ -15,14 +15,7 @@ body {
     color: #fff;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: relative;
-}
+
 
 .language-dropdown {
     position: absolute;
@@ -37,24 +30,17 @@ header {
     background-color: #fff;
     color: #000;
 }
-
-.logo-container {
+.header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Center the logo and title horizontally */
-    flex-direction: column; /* Stack the logo and title vertically on mobile */
-    text-align: center; /* Center the title text */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-.logo {
-    height: 50px; /* Adjust the height as needed */
-    margin-bottom: 10px; /* Add some space between the logo and title */
-}
+ 
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
-}
 
 main {
     flex: 1;
@@ -69,8 +55,8 @@ main {
 }
 
 .video-container {
-    width: 80%; /* Adjust the width for mobile */
-    max-width: 300px; /* Limit the width for larger screens */
+    width: 100%; /* Adjust the width for mobile */
+    max-width: 500px; /* Limit the width for larger screens */
     position: relative;
     margin: 20px 0;
 }
@@ -81,16 +67,15 @@ video {
     border: 5px solid #FF0082;
     border-radius: 10px;
 }
-
 .hashtags {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     position: absolute;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    justify-content: center;
 }
 
 .hashtags span {
@@ -119,6 +104,8 @@ video {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+
 
 footer {
     display: flex;
@@ -191,18 +178,43 @@ footer p {
 
  
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the logo and title horizontally */
+    height: 100%; /* Ensure the container takes full height of the header */
+}
+ 
 
-@media (min-width: 768px) {
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 0; /* Remove default margin */
+}
+
+@media (max-width: 768px) {
     .logo-container {
-        flex-direction: row; /* Align logo and title horizontally */
-        align-items: center;
+        flex-direction: column; /* Stack the logo and title vertically on mobile */
+        text-align: center; /* Center the title text */
+    }
+
+    .logo {
+        margin-bottom: 5px; /* Reduce space between logo and title on mobile */
     }
 
     .title {
-        margin-left: 10px; /* Add some space between logo and title */
+        font-size: 20px; /* Decrease font size for mobile */
     }
 
-    .video-container {
-        width: 50%; /* Adjust the width for larger screens */
-    }
+        .hashtags {
+            top: auto;
+            bottom: 450px; /* Adjust the bottom position */
+        }
+    
+        .hashtags span {
+            margin: 5px;
+        }
+    
+   
 }
