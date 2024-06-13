@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
     <header class="header">
@@ -17,9 +19,19 @@
                 <option value="jp">Japanese</option>
             </select>
         </div>
-        <div class="logo">
-            <img src="teleperformance-logo1.png" alt="Logo">
+        
+        <div class="logo-container">
+            <img src="TPLogo11.png" alt="Logo" class="logo">
             <span class="title">On The Hunt For THE ONE!</span>
+        </div>
+
+       
+
+        <div class="social-buttons">
+            <h4> Follow Us On:</h4> 
+             <a href="https://www.facebook.com/teleperformance.malaysia/" target="_blank" class="social-btn fb-btn"> </a>
+            <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"> </a>
+            <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"> </a>
         </div>
     </header>
     <main>
@@ -39,17 +51,54 @@
         </div>
     </main>
     <footer>
+        <h2>Please select your </h2>
+        <h3>Language:</h3>
+        <select id="language-select"></select>
+
+        <h3>Working location:</h3>
+        <select id="location-select"></select>
+
+        <h3>Job Position:</h3>
+        <select id="job-type-select"></select>
+
+        <div>
+            <h3 id="job-title-display"></h3>
+            <a id="job-link-display" href="#" target="_blank"></a>
+        </div>
+        <h2>Follow Us On:</h2> 
+
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/teleperformance.malaysia/" target="_blank" class="social-btn fb-btn"></a>
+            <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"></a>
+            <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"></a>
+        </div>
+        
         <p>Expect our response in 24 hours, no ifs, ands, or buts!</p>
         <div id="footer-options" class="button-group">
             <button value="https://careerseng-teleperformance.icims.com/jobs/34198/customer-success-specialist-%28m%29---japanese/job?mode=job&iis=Teleperformance.com">I'm The ONE</button>
             <button value="https://example.com/link2">I'm The One</button>
-            <button id="show-more">More Jobs</button>
+            <button id="show-more">generate QR and Link to Apply With US !! </button>
         </div>
         <div id="more-options" class="dropdown-content">
-            <a href="https://example.com/link3">Option 3</a>
-            <a href="https://example.com/link4">Option 4</a>
-            <a href="https://example.com/link5">Option 5</a>
+  
         </div>
     </footer>
+
+    <!-- The Modal for QR Code and URL -->
+    <div id="qr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Share this job</h2>
+            <canvas id="qr-code"></canvas>
+            <p><a id="job-url" href="#" target="_blank"></a></p>
+            <div class="share-buttons">
+                <button id="share-button-whatsapp">Share via WhatsApp</button>
+                <button id="share-button-line">Share via Line</button>
+                <button id="share-button-facebook">Share via Facebook</button>
+                <button id="share-button-IG">Share via Instagram</button>
+                <button id="share-button-TikTok">Share via TikTok</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
