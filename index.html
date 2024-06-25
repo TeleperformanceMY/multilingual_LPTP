@@ -12,20 +12,31 @@
 </head>
 <body>
     <header class="header">
-        <div class="language-dropdown">
+        <div class="language-dropdown ">
             <select name="languages" id="languages">
                 <option value="en">English</option>
                 <option value="zh">Mandarin</option>
                 <option value="jp">Japanese</option>
             </select>
+ 
+    
+                <div class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#about">About Us</a>
+                        <a href="#contact">Contact Us</a>
+                        <a href="#faqs">FAQs</a>
+                        <!-- Add more dropdown items as needed -->
+                    </div>
+                </div>
+                
         </div>
+    </div>
         
         <div class="logo-container">
             <img src="TPLogo11.png" alt="Logo" class="logo">
             <span class="title">On The Hunt For THE ONE!</span>
         </div>
-
-       
 
         <div class="social-buttons">
             <h4> Follow Us On:</h4> 
@@ -33,6 +44,8 @@
             <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"> </a>
             <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"> </a>
         </div>
+
+        <a href="your_link_here" class="glowing-button" target="_blank">Job For The Week</a>
     </header>
     <main>
         <div class="video-container">
@@ -45,44 +58,39 @@
                 <span>#ElevateAsia</span>
                 <span>#growtogether</span>
             </div>
+             <a href="your_link_here" class="video-button" target="_blank">I'm The One</a>
         </div>
         <div class="ad-sticker">
             <p>Are You The One ?!</p>
         </div>
+        
     </main>
     <footer>
-        <h2>Please select your </h2>
-        <h3>Language:</h3>
-        <select id="language-select"></select>
-
-        <h3>Working location:</h3>
-        <select id="location-select"></select>
-
-        <h3>Job Position:</h3>
-        <select id="job-type-select"></select>
-
-        <div>
-            <h3 id="job-title-display"></h3>
-            <a id="job-link-display" href="#" target="_blank"></a>
-        </div>
-        <h2>Follow Us On:</h2> 
-
-        <div class="social-buttons">
-            <a href="https://www.facebook.com/teleperformance.malaysia/" target="_blank" class="social-btn fb-btn"></a>
-            <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"></a>
-            <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"></a>
-        </div>
-        
-        <p>Expect our response in 24 hours, no ifs, ands, or buts!</p>
-        <div id="footer-options" class="button-group">
-            <button value="https://careerseng-teleperformance.icims.com/jobs/34198/customer-success-specialist-%28m%29---japanese/job?mode=job&iis=Teleperformance.com">I'm The ONE</button>
-            <button value="https://example.com/link2">I'm The One</button>
+        <div class="dropdown1">
+            <h2> TEXT</h2>
+             <select id="language-select">
+                <option value="" disabled selected>Choose your language</option>
+                <!-- Add other language options here -->
+            </select>
+    
+             <select id="location-select">
+                <option value="" disabled selected>Choose your location</option>
+                <!-- Add other location options here -->
+            </select>
+    
+             <select id="job-type-select">
+                <option value="" disabled selected>Choose your job</option>
+                <!-- Add other job options here -->
+            </select>
+     
+          </div>
+          <p>Expect our response in 24 hours, no ifs, ands, or buts!</p>
+         <div id="footer-options" class="button-group">
             <button id="show-more">generate QR and Link to Apply With US !! </button>
         </div>
-        <div id="more-options" class="dropdown-content">
-  
-        </div>
+    
     </footer>
+    
 
     <!-- The Modal for QR Code and URL -->
     <div id="qr-modal" class="modal">
@@ -92,13 +100,15 @@
             <canvas id="qr-code"></canvas>
             <p><a id="job-url" href="#" target="_blank"></a></p>
             <div class="share-buttons">
-                <button id="share-button-whatsapp">Share via WhatsApp</button>
-                <button id="share-button-line">Share via Line</button>
-                <button id="share-button-facebook">Share via Facebook</button>
-                <button id="share-button-IG">Share via Instagram</button>
-                <button id="share-button-TikTok">Share via TikTok</button>
+                <h2> Share Via</h2>
+                <button id="share-button-whatsapp"> </button>
+                <button id="share-button-line"> </button>
+                <button id="share-button-facebook"> </button>
+                <button id="share-button-IG"> </button>
+                <button id="share-button-TikTok" ></button>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
