@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "banner2";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-                               case 'falyer':
-                    iisValue = "falyer";
+            case 'flyers':
+                    iisValue = "flyers";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
             default:
