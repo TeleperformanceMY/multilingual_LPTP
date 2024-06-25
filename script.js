@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             join: "Expect our response in 24 hours, no ifs, ands, or buts!",
             videoSrc: "WhatsApp31.mp4",
             background: "depositphoto-modified.jpg",
-            moreJobs: "generate QR and Link to Apply With US !!"
+            moreJobs: "Generate QR and Link to Apply With US !!"
         },
         zh: {
             title: "寻找TA！",
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             join: "期待我们在24小时内回复，不折不扣！",
             videoSrc: "path/to/video-zh.mp4",
             background: "jp1.jpg",
-            moreJobs: "generate QR and Link to Apply With US !!"
+            moreJobs: "Generate QR and Link to Apply With US !!"
         },
         jp: {
             title: "THE ONEを探しています！",
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             join: "24時間以内の回答を期待してください、何の条件もありません！",
             videoSrc: "JPVID (1) (1).mp4",
             background: "jp2.jpg",
-            moreJobs: "generate QR and Link to Apply With US !!"
+            moreJobs: "Generate QR and Link to Apply With US !!"
         }
     };
 
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const langParam = urlParams.get('lang');
-    const sourceParam = urlParams.get('utm_source') || 'default_source';
-    const mediumParam = urlParams.get('utm_medium') || 'default_medium';
+    const sourceParam = urlParams.get('utm_source');
+    const mediumParam = urlParams.get('utm_medium');
     const campaignParam = urlParams.get('utm_campaign') || 'default_campaign';
 
     if (langParam && languages[langParam]) {
@@ -78,12 +78,49 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(link => {
             let url = link.href || link.value;
             url = new URL(url);
-            url.searchParams.set('utm_source', sourceParam);
-            url.searchParams.set('utm_medium', mediumParam);
-            url.searchParams.set('utm_campaign', campaignParam);
-            link.href = url.toString();
-            link.value = url.toString();
+            const utmSource = url.searchParams.get('utm_source');
+            const utmMedium = url.searchParams.get('utm_medium');
+            const utmCampaign = url.searchParams.get('utm_campaign');
+
+            if (utmSource && utmMedium && utmCampaign) {
+                url = generateFinalURL(url.toString(), utmSource, utmMedium);
+                link.href = url.toString();
+                link.value = url.toString();
+            }
         });
+    }
+
+    function generateFinalURL(baseURL, source, medium) {
+        let finalURL = new URL(baseURL);
+        let iisValue, iisnValue;
+
+        switch (medium) {
+            case 'social':
+                iisValue = "Social Media";
+                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+                break;
+            case 'mobile':
+                iisValue = "Mobile Stand";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner1':
+                iisValue = "banner1";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner2':
+                iisValue = "banner2";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            default:
+                console.error("Unknown utm_medium");
+                return baseURL;
+        }
+
+        finalURL.searchParams.set('mode', 'job');
+        finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
+        finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
+
+        return decodeURIComponent(finalURL.toString());
     }
 
     function openQrModal(url) {
@@ -115,14 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     moreJobsButton.addEventListener('click', () => {
-        const selectedLanguage = languageSelect.value;
-        const selectedLocation = locationSelect.value;
-        const selectedJob = jobSelect.value;
+        const selectedLanguage = document.getElementById('language-select').value;
+        const selectedLocation = document.getElementById('location-select').value;
+        const selectedJob = document.getElementById('job-type-select').value;
 
         const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
 
         if (jobData) {
-            const finalLink = jobData["Evergreen link"];
+            const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
             openQrModal(finalLink);
         } else {
             alert('Evergreen link not found for the selected job.');
@@ -133,47 +170,53 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let jsonData = [];
+document.addEventListener('DOMContentLoaded', () => {
+    const languageDropdown = document.getElementById('language-select');
+    const locationDropdown = document.getElementById('location-select');
+    const jobDropdown = document.getElementById('job-type-select');
 
-const languageSelect = document.getElementById('language-select');
-const locationSelect = document.getElementById('location-select');
-const jobSelect = document.getElementById('job-type-select');
+    // Fetch JSON data and populate dropdowns
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            populateDropdown(languageDropdown, ['Select your language', ...getUniqueValues(data, 'Language')]);
+            populateDropdown(locationDropdown, ['Choose your location']);
+            populateDropdown(jobDropdown, ['Choose your job']);
+            jsonData = data;
+        })
+        .catch(error => console.error('Error loading JSON data:', error));
 
-// Fetch JSON data
-fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-        jsonData = data;
-        populatePreferredLanguages(jsonData);
-    })
-    .catch(error => console.error('Error loading JSON data:', error));
+    // Event listeners for dropdown changes
+    languageDropdown.addEventListener('change', handleLanguageChange);
+    locationDropdown.addEventListener('change', handleLocationChange);
 
-function populatePreferredLanguages(data) {
-    const languages = [...new Set(data.map(item => item.Language))];
-    populateDropdown(languageSelect, languages);
-}
+    function handleLanguageChange() {
+        const selectedLanguage = languageDropdown.value;
+        const locations = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage), 'Location');
+        populateDropdown(locationDropdown, ['Choose your location', ...locations]);
+        populateDropdown(jobDropdown, ['Choose your job']);
+    }
 
-function populateDropdown(selectElement, options) {
-    selectElement.innerHTML = '';
-    options.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        selectElement.appendChild(optionElement);
-    });
-}
+    function handleLocationChange() {
+        const selectedLanguage = languageDropdown.value;
+        const selectedLocation = locationDropdown.value;
+        const jobs = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation), 'Positions');
+        populateDropdown(jobDropdown, ['Choose your job', ...jobs]);
+    }
 
-languageSelect.addEventListener('change', function() {
-    const selectedLanguage = this.value;
-    const locations = [...new Set(jsonData.filter(item => item.Language === selectedLanguage).map(item => item.Location))];
-    populateDropdown(locationSelect, locations);
-    populateDropdown(jobSelect, []); // Reset job dropdown
-});
+    function populateDropdown(selectElement, options) {
+        selectElement.innerHTML = '';
+        options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.textContent = option;
+            selectElement.appendChild(optionElement);
+        });
+    }
 
-locationSelect.addEventListener('change', function() {
-    const selectedLanguage = languageSelect.value;
-    const selectedLocation = this.value;
-    const jobs = jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation).map(item => item.Positions);
-    populateDropdown(jobSelect, jobs);
+    function getUniqueValues(data, key) {
+        return [...new Set(data.map(item => item[key]))];
+    }
 });
 
 // Event listeners for share buttons
@@ -202,33 +245,6 @@ document.getElementById("share-button-facebook").addEventListener("click", funct
 document.getElementById("share-button-IG").addEventListener("click", function() {
     const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
     const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
-    const instagramCaption = encodeURIComponent(message + "\n\n" + document.getElementById('job-url').href + "\n\n" + message2);
-    
-    // Open Instagram app if available, otherwise open Instagram website
-    const instagramAppLink = `instagram://library?Caption=${instagramCaption}`;
-    const instagramWebLink = `https://www.instagram.com/stories/myday?utm_source=ig_story_share&igshid=YOUR_IG_USER_ID`;
-
-    // Try opening Instagram app, if it fails, open Instagram website
-    window.open(instagramAppLink, "_blank", "width=600,height=400") || window.open(instagramWebLink, "_blank");
-});
-
-document.getElementById("share-button-TikTok").addEventListener("click", function() {
-    const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
-    const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
-    const tiktokCaption = encodeURIComponent(message + "\n\n" + document.getElementById('job-url').href + "\n\n" + message2);
-    
-    // Open TikTok app if available, otherwise open TikTok website
-    const tiktokAppLink = `tiktok://share?text=${tiktokCaption}`;
-    const tiktokWebLink = `https://www.tiktok.com/share?url=YOUR_VIDEO_URL`;
-
-    // Try opening TikTok app, if it fails, open TikTok website
-    window.open(tiktokAppLink, "_blank") || window.open(tiktokWebLink, "_blank");
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const sticker = document.querySelector('.header-sticker');
-    const footer = document.querySelector('footer');
-
-    sticker.addEventListener('click', function() {
-        footer.scrollIntoView({ behavior: 'smooth' });
-    });
+    const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
+    window.open(instagramLink, "_blank");
 });
