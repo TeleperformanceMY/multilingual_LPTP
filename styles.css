@@ -1,3 +1,4 @@
+/* Reset and global styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
@@ -13,37 +14,10 @@ body {
     min-height: 100vh;
     background: linear-gradient(45deg, #780096, #FF0082);
     color: #fff;
+    overflow-x: hidden;
 }
 
-.language-dropdown {
-    position: absolute;
-    left: 20px;
-}
-
-.language-dropdown select {
-    padding: 5px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-}
-
-.language-dropdown::after {
-    content: '▼';
-    font-size: 12px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
+/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -61,60 +35,228 @@ body {
 }
 
 .logo {
-    width: 100px;
+    width: 80px;
     height: auto;
     margin-bottom: 10px;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 .social-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .social-btn {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
-/* Specific background colors for social buttons */
+
 .fb-btn {
-     background-image: url('facebook_4401403.png'); /* Add Facebook logo */
- }
+    background-image: url('facebook_4401403.png'); /* Add Facebook logo */
+}
 
 .ig-btn {
-     background-image: url('instagram_1946461.png')
- }
+    background-image: url('instagram_1946461.png');
+}
 
 .yt-btn {
-     background-image: url('48968.png'); /* Add YouTube logo */
- }
+    background-image: url('48968.png'); /* Add YouTube logo */
+}
 
 /* Hover effect for social buttons */
 .social-btn:hover, .social-btn:focus {
     border-color: #662222; /* Change border color on hover */
     opacity: 0.9;
 }
-.header-sticker {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #F5D200;
-    color: black;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+
+/* Dropdown menu styling */
+.dropdown, .dropdown1 {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ensure the dropdown spans the full width of its container */
 }
 
+.dropbtn, .dropdown1 h2, .dropdown1 h3, .dropdown-content select {
+    background-color: #FF0082;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Ensure the dropdown button spans the full width of its container */
+    box-sizing: border-box;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover, .dropdown1:hover .dropdown1 h2, .dropdown1:hover .dropdown1 h3, .dropdown-content select:hover {
+    background-color: #D7006E;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%; /* Ensure the dropdown content spans the full width of its container */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content, .dropdown1:hover .dropdown-content {
+    display: block;
+}
+
+/* Select box styling */
+.dropdown1 select {
+    width: 100%; /* Ensure the select box spans the full width of its container */
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF0082;
+    color: white;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: left;
+}
+
+.dropdown1 select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown1 select option {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+/* Glowing effect for buttons */
+.glowing-button, .video-button, .button-group button {
+    animation: glowing 1500ms infinite;
+}
+.glowing-button {
+    display: block;
+    width: 200px; /* Adjust the width as needed */
+    padding: 20px; /* Increase padding for larger size */
+    font-size: 24px; /* Increase font size */
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(286, 28%, 48%);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none; /* Remove default underline */
+    animation: glowing 1500ms infinite;
+
+}
+
+.glowing-button:hover {
+    background-color: #8a3963;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px #FF0082;
+    }
+    50% {
+        box-shadow: 0 0 20px #FF0082;
+    }
+    100% {
+        box-shadow: 0 0 10px #FF0082;
+    }
+}
+.language-dropdown select {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-appearance: none; /* Remove default arrow on iOS Safari */
+    -moz-appearance: none; /* Remove default arrow on Firefox */
+    appearance: none; /* Remove default arrow */
+    background-image: url('dropdown_arrow.png'); /* Add custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position arrow icon */
+    background-size: 20px; /* Size of the arrow icon */
+}
+
+.language-dropdown select:hover {
+    background-color: #f0f0f0; /* Hover effect */
+}
+
+
+/* Adjusted size and positioning of the button under the video */
+.video-button {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF0082;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-button:hover {
+    background-color: #D7006E;
+}
+
+/* Enhanced dropdown styling in the footer */
+footer .dropdown-content {
+    background-color: #f9f9f9; /* Adjusted to match header */
+    color: black; /* Adjusted to match header */
+}
+
+/* Adjusted position of the button in the footer */
+footer .button-group {
+    margin-top: 30px;
+}
+
+/* Footer dropdown default option styling */
+.dropdown1 select option[disabled] {
+    color: #999; /* Adjusted color for disabled option */
+}
+
+.dropdown1 select option[selected] {
+    display: none; /* Hide the selected option from the dropdown */
+}
+
+/* Main content styles */
 main {
     flex: 1;
     display: flex;
@@ -125,6 +267,7 @@ main {
     background-size: cover;
     position: relative;
     padding: 20px;
+    width: 100%;
 }
 
 .video-container {
@@ -179,6 +322,7 @@ video {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer styles */
 footer {
     display: flex;
     flex-direction: column;
@@ -189,37 +333,6 @@ footer {
 
 footer h2, footer h3 {
     margin: 10px 0;
-}
-
-footer select {
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-}
-
-footer select::after {
-    content: '▼';
-    font-size: 12px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-footer p {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center;
 }
 
 .button-group {
@@ -245,33 +358,11 @@ footer p {
     background-color: #D7006E;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
 .show {
     display: block;
 }
 
-.button-group:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
+/* Updated modal styles */
 .modal {
     display: none;
     position: fixed;
@@ -281,17 +372,17 @@ footer p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
+    background-color: rgba(0,0,0,0.6); /* Increased transparency for better focus */
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
+    background-color: #fff;
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border-radius: 10px;
     width: 80%;
+    max-width: 400px; /* Limit maximum width for better readability */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Added box shadow for depth */
 }
 
 .close {
@@ -299,25 +390,80 @@ footer p {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#job-url {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .share-buttons {
     display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .share-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Share button logos */
+#share-button-whatsapp {
+    background-image: url('whatsapp_logo.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-line {
+    background-image: url('line_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-facebook {
+    background-image: url('FB-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-IG {
+    background-image: url('instagram_168766.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-TikTok {
+    background-image: url('tiktok_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Hover effect for share buttons */
+.share-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -330,7 +476,7 @@ footer p {
     }
 
     .title {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .hashtags {
@@ -345,5 +491,45 @@ footer p {
     .button-group {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .social-btn {
+        width: 25px;
+        height: 25px;
+    }
+
+    .video-button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .ad-sticker {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .button-group button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .dropdown, .dropdown1 {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        min-width: 100%;
+    }
+
+    .dropdown1 select {
+        font-size: 14px;
     }
 }
