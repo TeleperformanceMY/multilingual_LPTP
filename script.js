@@ -111,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "banner2";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
+                               case 'falyer':
+                    iisValue = "falyer";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
