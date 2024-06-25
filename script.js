@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     iisValue = "flyers";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
+                     case 'email':
+                        iisValue = "email Blast";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
