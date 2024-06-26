@@ -5,52 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.scss">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
  
 </head>
 <body>
-    <header class="header">
-        <div class="language-dropdown ">
-            <select name="languages" id="languages">
-                <option value="en">English</option>
-                <option value="zh">Mandarin</option>
-                <option value="jp">Japanese</option>
-            </select>
  
-    
-                <div class="dropdown">
-                    <button class="dropbtn">Menu</button>
-                    <div class="dropdown-content">
-                        <a href="#about">About Us</a>
-                        <a href="#contact">Contact Us</a>
-                        <a href="#faqs">FAQs</a>
-                        <!-- Add more dropdown items as needed -->
-                    </div>
-                </div>
-                
-        </div>
-    </div>
-        
-        <div class="logo-container">
-            <img src="TPLogo11.png" alt="Logo" class="logo">
-            <span class="title">On The Hunt For THE ONE!</span>
-        </div>
-
+    <header class="header">
+   
         <div class="social-buttons">
             <h4> Follow Us On:</h4> 
              <a href="https://www.facebook.com/teleperformance.malaysia/" target="_blank" class="social-btn fb-btn"> </a>
             <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"> </a>
             <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"> </a>
+            <a href="https://www.linkedin.com/company/teleperformance" target="_blank" class="social-btn in-btn"> </a>
+
+            <a href="https://linktr.ee/teleperformancemy" target="_blank" class="social-btn linktree-btn"> </a>
+
+            <a href="https://www.tiktok.com/@teleperformance_group" target="_blank" class="social-btn tiktok-btn"> </a>
+
+            <a href="https://x.com/Teleperformance"  target="_blank" class="social-btn x-btn"> </a>
+
+        </div>
+        <div class="logo-container">
+            <img src="TPLogo11.png" alt="Logo" class="logo">
+            <span class="title">On The Hunt For THE ONE!</span>
         </div>
 
-        <a href="your_link_here" class="glowing-button" target="_blank">Job For The Week</a>
+            <div class="language-dropdown ">
+                <select name="languages" id="languages">
+                    <option value="en">English</option>
+                    <option value="zh">Mandarin</option>
+                    <option value="jp">Japanese</option>
+                </select>
+     
+        
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.teleperformance.com/en-us/why-tp/about-tp/">About Us</a>
+                            <a href="https://www.teleperformance.com/en-us/contact-us/">Contact Us</a>
+                            <a href="#faqs">FAQs</a>
+                            <!-- Add more dropdown items as needed -->
+                        </div>
+                    </div>
+       
+                      
+                      
+            </div>
+        </div>
     </header>
     <main>
         <div class="video-container">
             <video autoplay controls loop>
-                <source src="WhatsApp31.mp4" type="video/mp4">
+                <source src="Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="hashtags">
@@ -58,7 +69,25 @@
                 <span>#ElevateAsia</span>
                 <span>#growtogether</span>
             </div>
-             <a href="your_link_here" class="video-button" target="_blank">I'm The One</a>
+            <div class="hashtags hashtags-under">
+                <span>#MoreTogether</span>
+                <span>#ElevateAsia</span>
+                <span>#growtogether</span>
+            </div>
+            
+            <!-- Hashtags on the right side -->
+            <div class="hashtags hashtags-right">
+                <span>#MoreTogether</span>
+                <span>#ElevateAsia</span>
+                <span>#growtogether</span>
+            </div>
+            
+            <!-- Hashtags on the left side -->
+            <div class="hashtags hashtags-left">
+                <span>#MoreTogether</span>
+                <span>#ElevateAsia</span>
+                <span>#growtogether</span>
+            </div>
         </div>
         <div class="ad-sticker">
             <p>Are You The One ?!</p>
@@ -66,8 +95,25 @@
         
     </main>
     <footer>
+ 
+    <div class="footer-half">
+     
+ 
+ 
+
         <div class="dropdown1">
-            <h2> TEXT</h2>
+            <h2>  Job Of The Week !</h2>
+            <a id="custom-link" href="https://careerseng-teleperformance.icims.com/jobs/49488/anti-money-laundering-%28aml%29---portuguese---kl/job?mode=job&iis=RAF&iisn=" class="button-40" target="_blank">I'm The One</a>
+
+        </div>
+
+    </div>
+            <div class="footer-half">
+                <div class="dropdown1">
+                <p class="response-message">Expect our response in 24 hours, no ifs, ands, or buts!</p>
+
+               
+ 
              <select id="language-select">
                 <option value="" disabled selected>Choose your language</option>
                 <!-- Add other language options here -->
@@ -82,13 +128,13 @@
                 <option value="" disabled selected>Choose your job</option>
                 <!-- Add other job options here -->
             </select>
-     
-          </div>
-          <p>Expect our response in 24 hours, no ifs, ands, or buts!</p>
-         <div id="footer-options" class="button-group">
-            <button id="show-more">generate QR and Link to Apply With US !! </button>
-        </div>
-    
+       
+            <div id="footer-options" class="button-group">
+                <button id="show-more">generate QR and Link to Apply With US !! </button>
+            </div>
+   
+    </div>
+
     </footer>
     
 
