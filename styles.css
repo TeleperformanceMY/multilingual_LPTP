@@ -12,26 +12,36 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(45deg, #780096, #FF0082);
+
+    /* Background image with cover to fit the screen */
+    background: url('abstract-smoke-background-with-stars-transparent-background-modern-illustration-stars-glitter-dust-pink-purple-mist-clouds-fantasy-galaxy-background_76964-92508.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
     color: #fff;
     overflow-x: hidden;
 }
 
+
+ 
+
 /* Header styles */
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(45deg, #780096, #FF0082);
     position: relative;
-}
+    width: 100%;
+ }
 
+/* Logo and title container */
 .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 20px; /* Space between logo section and dropdowns */
 }
 
 .logo {
@@ -40,15 +50,109 @@ body {
     margin-bottom: 10px;
 }
 
-.title {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+:root {
+    --brand-primary: #44D688;
+    --font-family-display: Monoton, Arial, sans-serif;
+    --font-family-primary: 'Rubik', Arial, sans-serif;
+    --neon-effect: 0 0 0 transparent,
+      0 0 20px rgb(255, 0, 255),
+      0 0 50px rgba(255, 0, 255, .5),
+      0 0 200px rgba(255, 0, 255, .5),
+      0 0 250px rgba(255, 0, 255, 1),
+      0 0 300px rgba(255, 0, 255, 1),
+      -250px -100px 100px rgba(255, 0, 255, 1)
+    ;
+  }
+  
+  .title {
+    color: #FF88FF;
+    font-family: Monoton, Arial, sans-serif;
+    font-size: 45px;
+    font-weight: normal;
+    text-shadow: 
+      0 0 0 transparent,
+      0 0 20px rgb(255, 0, 255),
+      0 0 50px rgba(255, 0, 255, 0.5),
+      0 0 200px rgba(255, 0, 255, 0.5),
+      0 0 250px rgba(255, 0, 255, 1),
+      0 0 300px rgba(255, 0, 255, 1),
+      -250px -100px 100px rgba(255, 0, 255, 1);
+    text-transform: uppercase;
+    transform: skew(0, -12deg) rotateZ(5deg);
+    white-space: nowrap;
+    animation: neon-blink 5s infinite alternate;
+    text-align: left;
+  }
+  
+  @keyframes neon-blink {
+    0%, 100% {
+      text-shadow: 
+        0 0 0 transparent,
+        0 0 20px rgb(255, 0, 255),
+        0 0 50px rgba(255, 0, 255, 0.5),
+        0 0 200px rgba(255, 0, 255, 0.5),
+        0 0 250px rgba(255, 0, 255, 1),
+        0 0 300px rgba(255, 0, 255, 1),
+        -250px -100px 100px rgba(255, 0, 255, 1);
+    }
+    50% {
+      text-shadow: 
+        0 0 0 transparent,
+        0 0 10px rgb(255, 0, 255),
+        0 0 25px rgba(255, 0, 255, 0.25),
+        0 0 100px rgba(255, 0, 255, 0.25),
+        0 0 125px rgba(255, 0, 255, 0.5),
+        0 0 150px rgba(255, 0, 255, 0.5),
+        -125px -50px 50px rgba(255, 0, 255, 0.5);
+    }
+  }
+  
+
+/* Dropdown menu styling */
+.dropdown-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Space between dropdowns and social buttons */
 }
 
+.dropdown, .dropdown1, .response-message, .button-40, .text, .button-group {
+    width: auto; /* Set width to 80% of the header width */
+    max-width: 800px; /* Set maximum width to 500px */
+    display: block;
+ 
+ 
+ 
+  }
+
+ 
+
+.dropbtn, .dropdown1 h2, .dropdown1 h3, .dropdown-content select {
+    background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
+    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
+        color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Social buttons container */
 .social-buttons {
     display: flex;
     gap: 10px;
+    position: absolute;
+    top: 20px; /* Position at the top */
+    right: 20px; /* Position at the right corner */
 }
 
 .social-btn {
@@ -60,33 +164,37 @@ body {
 }
 
 .fb-btn {
-    background-image: url('facebook_4401403.png'); /* Add Facebook logo */
+    background-image: url('fbpiink-removebg-preview.png'); /* Add Facebook logo */
 }
 
 .ig-btn {
-    background-image: url('instagram_1946461.png');
+    background-image: url('igpinnk-removebg-preview.png');
 }
 
 .yt-btn {
-    background-image: url('48968.png'); /* Add YouTube logo */
+    background-image: url('utpink-removebg-preview.png'); /* Add YouTube logo */
 }
-
+.in-btn {
+    background-image: url('inpink-removebg-preview.png'); /* Add YouTube logo */
+}
+.x-btn {
+    background-image: url('xpink-removebg-preview.png'); /* Add YouTube logo */
+}
+.linktree-btn {
+    background-image: url('output-onlinepngtools-removebg-preview.png'); /* Add YouTube logo */
+}
+.tiktok-btn {
+    background-image: url('tiktokpink-removebg-preview.png'); /* Add YouTube logo */
+}
 /* Hover effect for social buttons */
 .social-btn:hover, .social-btn:focus {
     border-color: #662222; /* Change border color on hover */
     opacity: 0.9;
 }
 
-/* Dropdown menu styling */
-.dropdown, .dropdown1 {
-    position: relative;
-    display: inline-block;
-    width: 100%; /* Ensure the dropdown spans the full width of its container */
-}
 
 .dropbtn, .dropdown1 h2, .dropdown1 h3, .dropdown-content select {
-    background-color: #FF0082;
-    color: white;
+ 
     padding: 10px;
     font-size: 14px;
     border: none;
@@ -98,8 +206,8 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.dropbtn:hover, .dropdown1:hover .dropdown1 h2, .dropdown1:hover .dropdown1 h3, .dropdown-content select:hover {
-    background-color: #D7006E;
+.video-button:hover, .glowing-button:hover, .dropbtn:hover, .dropdown1:hover .dropdown1 h2, .dropdown1:hover .dropdown1 h3, .dropdown-content select:hover {
+    background-image: radial-gradient(circle at center top, rgb(209, 213, 219), rgb(103, 32, 112), rgb(234, 88, 12));
 }
 
 .dropdown-content {
@@ -138,7 +246,7 @@ body {
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    background-color: #FF0082;
+    background-image: linear-gradient(rgb(226, 29, 209), rgb(243, 165, 237));
     color: white;
     cursor: pointer;
     appearance: none;
@@ -149,12 +257,13 @@ body {
 
 .dropdown1 select:focus {
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    
+    box-shadow: 0 0 5px rgba(172, 33, 33, 0.658);
 }
 
 .dropdown1 select option {
-    background-color: #f9f9f9;
-    color: black;
+    background: rgb(214, 214, 180);
+    color: rgb(58, 58, 58);
 }
 
 /* Glowing effect for buttons */
@@ -168,8 +277,11 @@ body {
     font-size: 24px; /* Increase font size */
     border: none;
     border-radius: 10px;
-    background-color: hsl(286, 28%, 48%);
-    color: #fff;
+    background-image: linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), radial-gradient(112.35% 100% at 67.1% 8.5%, #2AD0CA 0%, #E1F664 22.92%, #FEB0FE 46.87%, #ABB3FC 68.23%, #5DF7A4 87.5%, #58C4F6 100%);
+    background-blend-mode: screen, difference, normal;
+background-image: linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), radial-gradient(112.35% 100% at 67.1% 8.5%, #2AD0CA 0%, #E1F664 22.92%, #FEB0FE 46.87%, #ABB3FC 68.23%, #5DF7A4 87.5%, #58C4F6 100%);
+background-blend-mode: screen, difference, normal;
+        color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
@@ -194,26 +306,25 @@ body {
     }
 }
 .language-dropdown select {
-    background-color: #fff;
-    color: #333;
-    padding: 10px;
+
+  background: linear-gradient(135deg, #ff85c0, #d56dd7); /* Pink to purple gradient */
+  color: #fff; /* White text color */
+  font-family: 'Rubik', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #ff85c0, 0 0 20px #d56dd7; /* Glowing effect */
+
+      padding: 10px;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    -webkit-appearance: none; /* Remove default arrow on iOS Safari */
-    -moz-appearance: none; /* Remove default arrow on Firefox */
-    appearance: none; /* Remove default arrow */
-    background-image: url('dropdown_arrow.png'); /* Add custom arrow icon */
+        background-image: url('dropdown_arrow.png'); /* Add custom arrow icon */
     background-repeat: no-repeat;
     background-position: right 10px center; /* Position arrow icon */
     background-size: 20px; /* Size of the arrow icon */
 }
 
-.language-dropdown select:hover {
-    background-color: #f0f0f0; /* Hover effect */
-}
 
 
 /* Adjusted size and positioning of the button under the video */
@@ -226,7 +337,7 @@ body {
     font-size: 18px;
     border: none;
     border-radius: 5px;
-    background-color: #FF0082;
+    background-image: linear-gradient(135deg, #0E0220 0%, #000000 6px, #E40475 24.8%, #0E0220 35%, #48E0E4 56.3%, #48E0E4 62.4%, #FF00C8 72.9%, #000000DB 78.5%, #48E0E4 100%);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -238,12 +349,11 @@ body {
 
 /* Enhanced dropdown styling in the footer */
 footer .dropdown-content {
-    background-color: #f9f9f9; /* Adjusted to match header */
-    color: black; /* Adjusted to match header */
+     color: black; /* Adjusted to match header */
 }
 
 /* Adjusted position of the button in the footer */
-footer .button-group {
+footer  {
     margin-top: 30px;
 }
 
@@ -272,50 +382,29 @@ main {
 
 .video-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 750px;
     position: relative;
-    margin: 20px 0;
+    margin: 20px ;
 }
 
 video {
     width: 100%;
     height: auto;
-    border: 5px solid #FF0082;
+    border: 10px solid #FF0082;
     border-radius: 10px;
 }
 
-.hashtags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-}
 
-.hashtags span {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
 
-.hashtags span:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
+ 
 .ad-sticker {
-    position: absolute;
+    position: left;
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #F5D200;
-    color: black;
+    background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
+    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
+        color: black;
     font-weight: bold;
     border: 2px solid black;
     border-radius: 5px;
@@ -325,42 +414,28 @@ video {
 /* Footer styles */
 footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Change to row to split into two halves */
+    justify-content: space-between; /* Space between the two halves */
+    align-items: flex-start; /* Align items to the start */
     padding: 20px;
-    background: linear-gradient(45deg, #780096, #FF0082);
+
+    background: linear-gradient(45deg, rgba(120, 0, 150, 0.5), rgba(255, 0, 130, 0.5)); /* Faded gradient background */
+    color: #ff69b4; /* Pinkish color */}
+
+.footer-half {
+    width: 48%; /* Each half takes 48% of the width with a small gap between */
 }
 
 footer h2, footer h3 {
     margin: 10px 0;
 }
 
-.button-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.button-group button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #FF0082;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button-group button:hover {
-    background-color: #D7006E;
-}
+ 
 
 .show {
     display: block;
 }
+
 
 /* Updated modal styles */
 .modal {
@@ -400,7 +475,7 @@ footer h2, footer h3 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 84px;
     margin-bottom: 20px;
 }
 
@@ -457,12 +532,148 @@ h2 {
     background-size: contain;
 }
 
-/* Hover effect for share buttons */
-.share-buttons button:hover {
-    background-color: #f0f0f0;
+
+.button-40, .button-group {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+          0 0 4em 1em var(--glow-spread-color),
+          inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    }
+  
+  .button-40::after,  .button-group::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+  }
+  
+  .button-40:hover,  .button-group:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+          0 0 4em 2em var(--glow-spread-color),
+          inset 0 0 .75em .25em var(--glow-color);
+  }
+  
+  .button-40:active, .button-group:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+          0 0 2.5em 2em var(--glow-spread-color),
+          inset 0 0 .5em .25em var(--glow-color);
+  }
+  .response-message 
+  {    position: left;
+    top: 20px;
+    width: 470px;
+    right: 20px;
+    padding: 10px 20px;
+    background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
+    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
+        color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  }
+  
+  .response-message:hover {
+    transform: scale(1.05);
+    background-color: #4b006e; /* Darker purple on hover */
+  }
+  #show-more {
+
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+          0 0 4em 1em var(--glow-spread-color),
+          inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+ }
+
+#show-more:hover {
+    text-decoration: underline; /* Underline text on hover */
 }
 
+/* Hashtags under the video */
+.hashtags-under {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative; /* Use relative if the container is static */
+    top: 20px; /* Adjust based on the spacing needed below the video */
+    width: 100%;
+    margin: 0 auto;
+    z-index: -1; /* Ensure it stays behind other content */
+}
 
+.hashtags-left span, .hashtags-right span, .hashtags-under span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hashtags-left span, .hashtags-right span, .hashtags-under span:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hashtags on the right side */
+.hashtags-right {
+    display: flex;
+    flex-direction: column; /* Align vertically */
+    position: fixed;
+    right: 10px; /* Adjust based on the desired spacing from the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: auto;
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Hashtags on the left side */
+.hashtags-left {
+    display: flex;
+    flex-direction: column; /* Align vertically */
+    position: fixed;
+    left: 10px; /* Adjust based on the desired spacing from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: auto;
+    z-index: -1; /* Ensure it stays behind other content */
+}
 /* Responsive styles */
 @media (max-width: 768px) {
     .header {
@@ -473,6 +684,8 @@ h2 {
     .logo-container {
         flex-direction: column;
         text-align: center;
+        position: relative; /* Ensure correct stacking context */
+        z-index: 1; /* Ensure it stays above other elements */
     }
 
     .title {
@@ -480,12 +693,22 @@ h2 {
     }
 
     .hashtags {
-        top: auto;
-        bottom: 450px;
+        top: static;
     }
 
     footer {
+        flex-direction: column; /* Change to column for smaller screens */
+        align-items: center; /* Center align items */
         text-align: center;
+    }
+
+    .footer-half {
+        width: 100%; /* Full width for each half in column layout */
+        margin-bottom: 20px; /* Add space between the halves */
+    }
+
+    .footer-half:last-child {
+        margin-bottom: 0; /* Remove bottom margin for the last half */
     }
 
     .button-group {
@@ -495,6 +718,9 @@ h2 {
 
     .logo {
         width: 60px;
+        position: relative; /* Ensure correct stacking context */
+        z-index: 1; /* Ensure it stays above other elements */
+        margin-bottom: 40px; /* Increase space below the logo */
     }
 
     .title {
@@ -532,4 +758,18 @@ h2 {
     .dropdown1 select {
         font-size: 14px;
     }
+
+    .social-buttons {
+         margin-bottom: 20px;
+        position: relative; /* Ensure correct stacking context */
+        z-index: 1; /* Ensure it stays above other elements */
+    }
+
+    /* Adjusting .response-message for mobile view */
+    .response-message {
+        font-size: 14px; /* Slightly smaller font size for better readability */
+        padding: 12px 15px; /* Adjust padding for mobile view */
+        max-width: 100%; /* Ensure it takes up full width on mobile */
+    }
 }
+
