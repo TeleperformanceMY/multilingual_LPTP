@@ -1,10 +1,12 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const languages = {
         en: {
             title: "On The Hunt For THE ONE!",
             ad: "Are You The One ?!",
             join: "Expect our response in 24 hours, no ifs, ands, or buts!",
-            videoSrc: "WhatsApp31.mp4",
+            videoSrc:"Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4",
             background: "depositphoto-modified.jpg",
             moreJobs: "Generate QR and Link to Apply With US !!"
         },
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "寻找TA！",
             ad: "你是TA吗？！",
             join: "期待我们在24小时内回复，不折不扣！",
-            videoSrc: "path/to/video-zh.mp4",
+            videoSrc: "Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4",
             background: "jp1.jpg",
             moreJobs: "Generate QR and Link to Apply With US !!"
         },
@@ -227,6 +229,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const customLink = document.getElementById('custom-link');
+
+    if (customLink) {
+        customLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action of the link
+
+            const originalUrl = customLink.getAttribute('href');
+            const currentUrl = window.location.href;
+            const url = new URL(currentUrl);
+            const utmSource = url.searchParams.get('utm_source');
+            const utmMedium = url.searchParams.get('utm_medium');
+
+            if (utmSource && utmMedium) {
+                const finalUrl = generateFinalURL(originalUrl, utmSource, utmMedium);
+                customLink.setAttribute('href', finalUrl); // Update the href attribute
+                window.open(finalUrl, '_blank'); // Open the modified URL in a new tab
+            } else {
+                console.error("Missing utm_source or utm_medium parameters in the current URL");
+            }
+        });
+    }
+
+    function generateFinalURL(baseURL, source, medium) {
+        let finalURL = new URL(baseURL);
+        let iisValue, iisnValue;
+
+        switch (medium) {
+            case 'social':
+                iisValue = "Social Media";
+                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+                break;
+            case 'mobile':
+                iisValue = "Mobile Stand";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner1':
+                iisValue = "banner1";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner2':
+                iisValue = "banner2";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'flyers':
+                iisValue = "flyers";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'email':
+                iisValue = "email Blast";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            default:
+                console.error("Unknown utm_medium");
+                return baseURL;
+        }
+
+        finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
+        finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
+
+        return finalURL.toString();
+    }
+});
+
+
+
+
 // Event listeners for share buttons
 document.getElementById("share-button-whatsapp").addEventListener("click", function() {
     const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
@@ -256,3 +326,6 @@ document.getElementById("share-button-IG").addEventListener("click", function() 
     const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
     window.open(instagramLink, "_blank");
 });
+
+ 
+ 
