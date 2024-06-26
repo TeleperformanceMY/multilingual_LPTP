@@ -437,27 +437,28 @@ footer h2, footer h3 {
 }
 
 
-/* Updated modal styles */
+/* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.6); /* Increased transparency for better focus */
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
     padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Set max width for larger screens */
     border-radius: 10px;
-    width: 80%;
-    max-width: 400px; /* Limit maximum width for better readability */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Added box shadow for depth */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .close {
@@ -465,18 +466,19 @@ footer h2, footer h3 {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 
+/* Special fonts for headings */
 h2 {
-    font-size: 84px;
-    margin-bottom: 20px;
+    font-family: 'YourSpecialFont', sans-serif;
+    color: #FF006B;
 }
 
 #job-url {
@@ -496,40 +498,48 @@ h2 {
     padding: 10px 20px;
     font-size: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+ }
 
 /* Share button logos */
 #share-button-whatsapp {
-    background-image: url('whatsapp_logo.jpg');
+    background-image: url('image\ \(11\)-Photoroom.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: var(--neon-effect);
+
 }
 
 #share-button-line {
-    background-image: url('line_logo.png');
+    background-image: url('output-onlinepngtools-Photoroom.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: var(--neon-effect);
+
 }
 
 #share-button-facebook {
-    background-image: url('FB-removebg-preview.png');
+    background-image: url('fbpiink-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: var(--neon-effect);
+
 }
 
 #share-button-IG {
-    background-image: url('instagram_168766.png');
+    background-image: url('igpinnk-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: var(--neon-effect);
+
 }
 
 #share-button-TikTok {
-    background-image: url('tiktok_logo.png');
+    background-image: url('tiktokpink-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: var(--neon-effect);
 }
 
 
