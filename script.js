@@ -253,10 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function generateFinalURL(baseURL, source, medium) {
+  function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
-
+    
         switch (medium) {
             case 'social':
                 iisValue = "Social Media";
@@ -286,11 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Unknown utm_medium");
                 return baseURL;
         }
-
+    
+        finalURL.searchParams.set('mode', 'job'); // Adding 'mode=job' parameter
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
         finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
-
-        return finalURL.toString();
+    
+        return decodeURIComponent(finalURL.toString()); // Decoding the final URL before returning
     }
 });
 
