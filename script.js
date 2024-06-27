@@ -7,24 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
             ad: "Are You The One ?!",
             join: "Expect our response in 24 hours, no ifs, ands, or buts!",
             videoSrc:"Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4",
-            background: "depositphoto-modified.jpg",
-            moreJobs: "Generate QR and Link to Apply With US !!"
+             moreJobs: "Generate QR and Link to Apply With US !!"
         },
         zh: {
             title: "寻找TA！",
             ad: "你是TA吗？！",
             join: "期待我们在24小时内回复，不折不扣！",
             videoSrc: "Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4",
-            background: "jp1.jpg",
-            moreJobs: "Generate QR and Link to Apply With US !!"
+             moreJobs: "Generate QR and Link to Apply With US !!"
         },
         jp: {
             title: "THE ONEを探しています！",
             ad: "あなたはTHE ONEですか？！",
             join: "24時間以内の回答を期待してください、何の条件もありません！",
             videoSrc: "JPVID (1) (1).mp4",
-            background: "jp2.jpg",
-            moreJobs: "Generate QR and Link to Apply With US !!"
+             moreJobs: "Generate QR and Link to Apply With US !!"
         }
     };
 
@@ -121,6 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
                         iisValue = "email Blast";
                         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                         break;
+                        case 'Banner1':
+                            iisValue = "banner1";
+                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                            break;
+                        case 'Banner2':
+                            iisValue = "banner2";
+                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                            break;
+                    case 'flyers':
+                        iisValue = "flyers";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'email':
+                        iisValue = "email Blast";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                        case 'Flyers':
+                            iisValue = "flyers";
+                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                            break;
+                        case 'Email':
+                            iisValue = "email Blast";
+                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                            break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
@@ -253,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-  function generateFinalURL(baseURL, source, medium) {
+    function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
     
@@ -274,6 +295,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "banner2";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
+                case 'Banner1':
+                    iisValue = "banner1";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+                case 'Banner2':
+                    iisValue = "banner2";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
             case 'flyers':
                 iisValue = "flyers";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
@@ -282,6 +311,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "email Blast";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
+                case 'Flyers':
+                    iisValue = "flyers";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+                case 'Email':
+                    iisValue = "email Blast";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
@@ -293,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         return decodeURIComponent(finalURL.toString()); // Decoding the final URL before returning
     }
+    
 });
 
 
