@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    overflow-x:hidden;
 }
 
 body {
@@ -21,10 +22,13 @@ body {
     
     color: #fff;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure body fits within mobile width */
 }
 
 
- 
 
 /* Header styles */
 .header {
@@ -706,6 +710,8 @@ h2 {
 }
 
 /* Hashtags under the video */
+
+
 .hashtags-under {
     display: flex;
     flex-wrap: wrap;
@@ -881,29 +887,59 @@ h2 {
 }
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 768px) {
-    .header {
+
+
+@media (max-width: 768px)
+
+
+{
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        max-width: 100%; /* Ensure body fits within mobile width */
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto; /* Ensure images fit within the viewport width */
+    }
+    /* Additional adjustments to ensure full width */
+    .text-content, .button-group, .dropdown, .dropdown1, .response-message {
+        width: 100%;
+        max-width: 100%;
+    }
+    .header, .logo-container, .footer {
+        width: 100%;
+        display: flex;
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
-    .logo-container {
+    .header {
         flex-direction: column;
-        text-align: center;
+    }
+
+    .logo-container {
         position: relative;
         z-index: 1;
     }
 
     .title {
         font-size: 18px;
+        margin: 0;
     }
 
-   .hashtags {
+    .hashtags {
         top: static;
-    }
-    .hashtags-right  {
+     }
+
+    .hashtags-right {
         display: none; /* Hide right and left hashtags on mobile */
     }
 
@@ -911,6 +947,7 @@ h2 {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%; /* Ensure footer is full width */
     }
 
     .footer-half {
@@ -925,6 +962,7 @@ h2 {
     .button-group {
         flex-direction: column;
         gap: 15px;
+        width: 100%; /* Ensure buttons fit within mobile width */
     }
 
     .logo {
@@ -932,10 +970,6 @@ h2 {
         position: relative;
         z-index: 1;
         margin-bottom: 40px;
-    }
-
-    .title {
-        font-size: 16px;
     }
 
     .social-btn {
@@ -982,15 +1016,9 @@ h2 {
         max-width: 100%;
     }
 
-    /* Additional adjustments */
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
     .container {
         padding: 0 15px; /* General padding for mobile view */
+        max-width: 100%; /* Ensure container fits within mobile width */
     }
 
     .content {
@@ -998,11 +1026,7 @@ h2 {
         max-width: 100%; /* Ensure full width content */
     }
 
-    .image {
-        width: 100%;
-        height: auto;
-    }
-
+  
     .text-content {
         font-size: 14px;
         line-height: 1.5;
