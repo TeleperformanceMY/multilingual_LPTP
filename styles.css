@@ -900,8 +900,11 @@ h2 {
         font-size: 18px;
     }
 
-    .hashtags {
+   .hashtags {
         top: static;
+    }
+    .hashtags-right  {
+        display: none; /* Hide right and left hashtags on mobile */
     }
 
     footer {
