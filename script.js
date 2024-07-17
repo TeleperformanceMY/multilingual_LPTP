@@ -99,11 +99,11 @@ switch (medium) {
         iisValue = "Social Media";
         iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
         break;
-   case 'Career':
+   case 'career':
         iisValue = "Career fair";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Digital':
+    case 'digital':
         iisValue = "Digital Ad";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
@@ -115,11 +115,11 @@ switch (medium) {
         iisValue = "Career Fair";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Mobile':
+    case 'mobile':
          iisValue = "Mobile Stand";
          iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
             break;
-    case 'Poster':
+    case 'poster':
         iisValue = "Poster";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
          break;
@@ -127,11 +127,11 @@ switch (medium) {
         iisValue = "Social Media";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Flyers':
+    case 'flyers':
         iisValue = "Flyers";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Physical':
+    case 'physical':
         iisValue = "Physical QR";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
@@ -147,11 +147,11 @@ switch (medium) {
             iisValue = "banner2";
             iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
             break;
-            case 'Email':
+            case 'email':
                         iisValue = "Email Blast";
                         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                         break;  
-  
+   
     default:
         console.error("Unknown utm_medium");
         return baseURL;
@@ -294,11 +294,11 @@ switch (medium) {
         iisValue = "Social Media";
         iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
         break;
-   case 'Career':
+   case 'career':
         iisValue = "Career fair";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Digital':
+    case 'digital':
         iisValue = "Digital Ad";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
@@ -310,11 +310,11 @@ switch (medium) {
         iisValue = "Career Fair";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Mobile':
+    case 'mobile':
          iisValue = "Mobile Stand";
          iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
             break;
-    case 'Poster':
+    case 'poster':
         iisValue = "Poster";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
          break;
@@ -322,11 +322,11 @@ switch (medium) {
         iisValue = "Social Media";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Flyers':
+    case 'flyers':
         iisValue = "Flyers";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
-    case 'Physical':
+    case 'physical':
         iisValue = "Physical QR";
         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
         break;
@@ -342,11 +342,11 @@ switch (medium) {
             iisValue = "banner2";
             iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
             break;
-            case 'Email':
+            case 'email':
                         iisValue = "Email Blast";
                         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                         break;  
-  
+   
     default:
         console.error("Unknown utm_medium");
         return baseURL;
