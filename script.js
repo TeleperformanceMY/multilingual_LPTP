@@ -93,59 +93,69 @@ document.addEventListener('DOMContentLoaded', () => {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
 
-        switch (medium) {
-            case 'social':
-                iisValue = "Social Media";
-                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-                break;
-            case 'mobile':
-                iisValue = "Mobile Stand";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'banner1':
-                iisValue = "banner1";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'banner2':
-                iisValue = "banner2";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'flyers':
-                    iisValue = "flyers";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-                     case 'email':
-                        iisValue = "email Blast";
+
+switch (medium) {
+    case 'social':
+        iisValue = "Social Media";
+        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+        break;
+   case 'Career':
+        iisValue = "Career fair";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Digital':
+        iisValue = "Digital Ad";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'mobile':
+        iisValue = "mobile stand";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Career':
+        iisValue = "Career Fair";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Mobile':
+         iisValue = "Mobile Stand";
+         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+    case 'Poster':
+        iisValue = "Poster";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+         break;
+            case 'Social':
+        iisValue = "Social Media";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Flyers':
+        iisValue = "Flyers";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Physical':
+        iisValue = "Physical QR";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'FoTG':
+        iisValue = "FoTG";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'banner1':
+            iisValue = "banner1";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+    case 'banner2':
+            iisValue = "banner2";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+            case 'Email':
+                        iisValue = "Email Blast";
                         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                        break;
-                        case 'Banner1':
-                            iisValue = "banner1";
-                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                            break;
-                        case 'Banner2':
-                            iisValue = "banner2";
-                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                            break;
-                    case 'flyers':
-                        iisValue = "flyers";
-                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                        break;
-                    case 'email':
-                        iisValue = "email Blast";
-                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                        break;
-                        case 'Flyers':
-                            iisValue = "flyers";
-                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                            break;
-                        case 'Email':
-                            iisValue = "email Blast";
-                            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                            break;
-            default:
-                console.error("Unknown utm_medium");
-                return baseURL;
-        }
+                        break;  
+  
+    default:
+        console.error("Unknown utm_medium");
+        return baseURL;
+}
 
         finalURL.searchParams.set('mode', 'job');
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
@@ -278,51 +288,69 @@ document.addEventListener('DOMContentLoaded', () => {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
     
-        switch (medium) {
-            case 'social':
-                iisValue = "Social Media";
-                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-                break;
-            case 'mobile':
-                iisValue = "Mobile Stand";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'banner1':
-                iisValue = "banner1";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'banner2':
-                iisValue = "banner2";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-                case 'Banner1':
-                    iisValue = "banner1";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-                case 'Banner2':
-                    iisValue = "banner2";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-            case 'flyers':
-                iisValue = "flyers";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'email':
-                iisValue = "email Blast";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-                case 'Flyers':
-                    iisValue = "flyers";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-                case 'Email':
-                    iisValue = "email Blast";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-            default:
-                console.error("Unknown utm_medium");
-                return baseURL;
-        }
+   
+switch (medium) {
+    case 'social':
+        iisValue = "Social Media";
+        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+        break;
+   case 'Career':
+        iisValue = "Career fair";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Digital':
+        iisValue = "Digital Ad";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'mobile':
+        iisValue = "mobile stand";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Career':
+        iisValue = "Career Fair";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Mobile':
+         iisValue = "Mobile Stand";
+         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+    case 'Poster':
+        iisValue = "Poster";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+         break;
+            case 'Social':
+        iisValue = "Social Media";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Flyers':
+        iisValue = "Flyers";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'Physical':
+        iisValue = "Physical QR";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'FoTG':
+        iisValue = "FoTG";
+        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+        break;
+    case 'banner1':
+            iisValue = "banner1";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+    case 'banner2':
+            iisValue = "banner2";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+            case 'Email':
+                        iisValue = "Email Blast";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;  
+  
+    default:
+        console.error("Unknown utm_medium");
+        return baseURL;
+}
     
         finalURL.searchParams.set('mode', 'job'); // Adding 'mode=job' parameter
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
