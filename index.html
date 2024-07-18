@@ -3,169 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Teleperformance Landing Page</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles.scss">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
- 
+    <script src="https://cdn.jsdelivr.net/npm/qrious@latest/dist/qrious.min.js"></script>
+
 </head>
+
 <body>
- 
-    <header class="header">
-   
-        <div class="social-buttons">
-            <h4 style="display: inline-block; font-weight: bold; text-shadow: 0 0 10px #FF0082";> Follow Us On:</h4> 
-             <a href="https://www.facebook.com/teleperformance.malaysia/" target="_blank" class="social-btn fb-btn"> </a>
-            <a href="https://www.instagram.com/teleperformance_malaysia/" target="_blank" class="social-btn ig-btn"> </a>
-            <a href="https://www.youtube.com/@TeleperformanceGroup" target="_blank" class="social-btn yt-btn"> </a>
-            <a href="https://www.linkedin.com/company/teleperformance" target="_blank" class="social-btn in-btn"> </a>
-
-            <a href="https://linktr.ee/teleperformancemy" target="_blank" class="social-btn linktree-btn"> </a>
-
-            <a href="https://www.tiktok.com/@teleperformance_group" target="_blank" class="social-btn tiktok-btn"> </a>
-
-            <a href="https://x.com/Teleperformance"  target="_blank" class="social-btn x-btn"> </a>
-
+    <header>
+        <div class="logo">
+            <img src="GMT_Logos Teleperformance_RGB_July 2023_purple gradient.png" alt="Teleperformance Logo">
         </div>
-        <div class="logo-container">
-            <img src="TPLogo11.png" alt="Logo" class="logo">
-            <span class="title">On The Hunt For THE ONE!</span>
-        </div>
-
-            <div class="language-dropdown ">
-                <select name="languages" id="languages">
-                    <option value="en">English</option>
-                    <option value="zh">Mandarin</option>
-                    <option value="jp">Japanese</option>
-                </select>
-     
         
-                    <div class="dropdown">
-                        <button class="dropbtn">Menu</button>
-                        <div class="dropdown-content">
-                            <a href="https://www.teleperformance.com/en-us/why-tp/about-tp/">About Us</a>
-                            <a href="https://www.teleperformance.com/en-us/contact-us/">Contact Us</a>
-                            <a href="#faqs">FAQs</a>
-                            <!-- Add more dropdown items as needed -->
-                        </div>
-                    </div>
-       
-                      
-                      
+        <nav>
+            <!-- Desktop menu -->
+            <ul class="desktop-menu">
+                <li>
+                    <a href="#">About Us</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
+                        <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Careers</a>
+                    <ul class="dropdown">
+                        <li><a href="#" id="hot-job">🔥 Hot Job 🔥</a></li>
+                        <li><a href="oppor.html"> 🌟 Opportunities 🌟</a></li>
+                        <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Stay Connected</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
+                        <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
+                        <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
+                        <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
+                <li class="language-dropdown">
+                    <a href="#">Language</a>
+                    <ul class="dropdown">
+                        <li><a href="#" data-lang="en">English</a></li>
+                        <li><a href="#" data-lang="zh">Mandarin</a></li>
+                        <li><a href="#" data-lang="jp">Japanese</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+            <!-- Mobile menu toggle and dropdown -->
+            <div class="mobile-menu-toggle">&#9776;</div> <!-- ☰ symbol for mobile menu toggle -->
+            <div class="mobile-menu">
+                <ul class="mobile-menu-list">
+                    <li>
+                        <a href="#">About Us</a>
+                        <ul class="dropdown">
+                            <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
+                            <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Careers</a>
+                        <ul class="dropdown">
+                            <li><a href="#" id="hot-job-mobile">🔥 Hot Job 🔥</a></li>
+                            <li><a href="oppor.html"> 🌟 Opportunities 🌟</a></li>
+                            <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Stay Connected</a>
+                        <ul class="dropdown">
+                            <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
+                            <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
+                            <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
+                            <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
+                    <li>
+                        <a href="#">Language</a>
+                        <ul class="dropdown">
+                            <li><a href="#" data-lang="en">English</a></li>
+                            <li><a href="#" data-lang="zh">Mandarin</a></li>
+                            <li><a href="#" data-lang="jp">Japanese</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </header>
+        </nav>
+ 
+       
+
+</div>
+    </header>
+
     <main>
-        <div class="video-container">
-            <video autoplay controls loop>
-                <source src="Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hashtags">
-                <span>#MoreTogether</span>
-                <span>#ElevateAsia</span>
-                <span>#growtogether</span>
+        <section class="intro">
+            <div class="intro-text">
+                <h1>We are on the hunt for the <span class="highlight">One</span></h1>
             </div>
-            <div class="hashtags hashtags-under">
-                <span>#MoreTogether</span>
-                <span>#ElevateAsia</span>
-                <span>#growtogether</span>
+            <div class="intro-video">
+                <video width="100%" controls autoplay controls loop>
+                    <source src="Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            
-            <!-- Hashtags on the right side -->
-            <div class="hashtags hashtags-right">
-                <span>#MoreTogether</span>
-                <span>#ElevateAsia</span>
-                <span>#growtogether</span>
+        </section>
+
+        <section class="job-section">
+            <div class="background-image"></div>
+            <div class="hot-job">
+                <h2>Hot Job Of The Week!</h2>
+                <p>Check out our <strong>“Hot Job of the Week”</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!</p>
+                <button id="apply-btn" href="https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job?mode=view" class="apply-btn">Apply Now!</button>
             </div>
-            
-            <!-- Hashtags on the left side -->
-            <div class="hashtags hashtags-left">
-                <span>#MoreTogether</span>
-                <span>#ElevateAsia</span>
-                <span>#growtogether</span>
-            </div>
-        </div>
-        <div class="ad-sticker">
-            <p>Are You The One ?!</p>
-        </div>
-        
-    </main>
-              <p class="response-message1">Expect our response in 24 hours, no ifs, ands, or buts!</p>
-  
-    <footer>
-        <div class="footer-half">
-            <div class="dropdown1">
-
-                <h2 >Job Of The Week!</h2>
-                <hr style="border: 1px solid  ; margin: 30px 0;">
-
-                <h2>Discover Teleperformance's "Job of the Week" and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!</h2>
-                <hr style="border: 1px solid  ; margin: 5px 0;">
-
-                <a id="custom-link" href="https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job?mode=view" class="button-40" target="_blank">Apply Now!</a>
-            </div>
-        </div>
-    
-        <!-- Visible horizontal line to separate sections -->
-        <hr style="border: 1px solid #FF0082; margin: 20px 0;">
-        <div class="footer-half">
-            <div class="dropdown1">
-                <p class="response-message">Or explore other available Unique option for you!</p>
-                <hr style="border: 1px solid #ffffff; margin: 10px 0;">
-
-                <select id="language-select" class="footer-select">
-                    <option value="" disabled selected>Choose your language</option>
-                    <!-- Add other language options here -->
-                </select>
-                <hr style="border: 1px solid #ffffff; margin: 5px 0;">
-
-                <select id="location-select" class="footer-select">
-                    <option value="" disabled selected>Choose your location</option>
-                    <!-- Add other location options here -->
-                </select>
-                <hr style="border: 1px solid #ffffff; margin: 5px 0;">
-
-                <select id="job-type-select" class="footer-select">
-                    <option value="" disabled selected>Choose your job</option>
-                    <!-- Add other job options here -->
-                </select>
-                <hr style="border: 1px solid #ffffff; margin: 5px 0;">
-
-                <div id="footer-options" class="button-group">
-                    <button id="show-more">Apply Now!</button>
+            <div class="find-job">
+                <h2>Find your perfect job!</h2>
+                <div class="dropdowns">
+                    <label for="language-select">
+                        Preferred Language
+                        <select id="language-select" class="footer-select">
+                            <option value="" disabled selected>Choose your language</option>
+                        </select>
+                    </label>
+                    <hr style="border: 1px solid #ffffff; margin: 5px 0;">
+                    <label for="location-select">
+                        Choose Your Location
+                        <select id="location-select" class="footer-select">
+                            <option value="" disabled selected>Choose your location</option>
+                        </select>
+                    </label>
+                    <hr style="border: 1px solid #ffffff; margin: 5px 0;">
+                    <label for="job-type-select">
+                        Choose Your Job Type
+                        <select id="job-type-select" class="footer-select">
+                            <option value="" disabled selected>Choose your job type</option>
+                        </select>
+                    </label>
                 </div>
+             
+                <div class="container">
+
+                    <button id="generate-btn" class="generate-btn">Generate QR Code & Apply Now!</button>
+
+                    <h1>Our team will respond within  <span class="highlighted-word">48 hours!</span></h1>
+
+                          
+                </div>
+                
+
+                                    
             </div>
-        </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p class="footer-left">© 2024 Teleperformance. All rights reserved.</p>
+        <p class="footer-right">#ElevateAsia #MoreTogether</p>
         
     </footer>
-    
-    <footer style="text-align: center; background-color: black; color: white;">
-        <div style="display: inline-block; font-weight: bold; text-shadow: 0 0 10px #FF0082;">© 2024 Teleperformance. All rights reserved.</div>
-    </footer>
-    
-    
-    <!-- The Modal for QR Code and URL -->
-    <div id="qr-modal" class="modal">
+    <div id="qr-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
             <canvas id="qr-code"></canvas>
             <p><a id="job-url" href="#" target="_blank"></a></p>
             <div class="share-buttons">
                 <h2> Share Via</h2>
-                <div> 
-                <button id="share-button-whatsapp"> </button>
-                <button id="share-button-line"> </button>
-                <button id="share-button-facebook"> </button>
-                <button id="share-button-IG"> </button>
-                <button id="share-button-TikTok" ></button>
-            </div>
+                <div>
+                    <button id="share-button-whatsapp"></button>
+                    <button id="share-button-line"></button>
+                </div>
             </div>
         </div>
     </div>
     
+
+
+
 </body>
-</html>
+</html> 
