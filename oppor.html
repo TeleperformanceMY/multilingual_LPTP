@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrious@latest/dist/qrious.min.js"></script>
+
+
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+
+            <img src="GMT_Logos Teleperformance_RGB_July 2023_purple gradient.png" alt="Teleperformance Logo">
+            <button class="back-button" onclick="window.history.back();">←</button>
+
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">About Us</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
+                        <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Careers</a>
+                    <ul class="dropdown">
+                        <li><a href="#">🔥 Hot Job 🔥</a></li>
+                        <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Stay Connected</a>
+                    <ul class="dropdown">
+                        <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
+                        <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
+                        <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
+                        <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
+
+                    
+                    </ul>
+                </li>
+                
+                <li><a href="#" class="contact-us">Contact Us</a></li>
+                <li class="language-dropdown">
+                    <a href="#">Language</a>
+                    <ul class="dropdown">
+                        <li><a href="#" data-lang="en">English</a></li>
+                        <li><a href="#" data-lang="zh">Mandarin</a></li>
+                        <li><a href="#" data-lang="jp">Japanese</a></li>
+                    </ul>
+              
+                </li>
+                <div class="mobile-menu">
+                    <button class="mobile-menu-button">☰</button>
+                    <ul class="mobile-dropdown">
+                        <li>
+                            <a href="#">About Us</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
+                                <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Careers</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="#" id="hot-job">🔥 Hot Job 🔥</a></li>
+                                <li><a href="oppor.html"> 🌟 Opportunities 🌟</a></li>
+                                <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Stay Connected</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
+                                <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
+                                <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
+                                <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
+                        <li class="language-dropdown">
+                            <a href="#">Language</a>
+                            <ul class="dropdown">
+                                <li><a href="#" data-lang="en">English</a></li>
+                                <li><a href="#" data-lang="zh">Mandarin</a></li>
+                                <li><a href="#" data-lang="jp">Japanese</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                
+        </nav>
+        
+        <button class="mobile-menu-button">&#9776;</button>
+
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro-text1">
+                <h1>Find your perfect <span class="highlight">Job!</span></h1>
+                <h2>Our team will respond within <span class="highlighted-word">48 hours!</span></h2>
+            </div>
+    
+            <div class="find-job">
+                <h2>Find your perfect job!</h2>
+                <div class="dropdowns">
+                    <label for="language-select">
+                        Preferred Language
+                        <select id="language-select" class="footer-select">
+                            <option value="" disabled selected>Choose your language</option>
+                        </select>
+                    </label>
+                    <hr style="border: 1px solid #ffffff; margin: 5px 0;">
+                    <label for="location-select">
+                        Choose Your Location
+                        <select id="location-select" class="footer-select">
+                            <option value="" disabled selected>Choose your location</option>
+                        </select>
+                    </label>
+                    <hr style="border: 1px solid #ffffff; margin: 5px 0;">
+                    <label for="job-type-select">
+                        Choose Your Job Type
+                        <select id="job-type-select" class="footer-select">
+                            <option value="" disabled selected>Choose your job type</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="container">
+                    <button id="generate-btn" class="generate-btn">Generate QR Code & Apply Now!</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p class="footer-left">© 2024 Teleperformance. All rights reserved.</p>
+        <p class="footer-right">#ElevateAsia #MoreTogether</p>
+        
+    </footer>
+    <div id="qr-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <canvas id="qr-code"></canvas>
+            <p><a id="job-url" href="#" target="_blank"></a></p>
+            <div class="share-buttons">
+                <h2> Share Via</h2>
+                <div>
+                    <button id="share-button-whatsapp"></button>
+                    <button id="share-button-line"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ </body>
+</html>

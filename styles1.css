@@ -1,0 +1,559 @@
+/* styles.css */
+body {
+    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('GMT_TP_Wave_Sep23_LightBlue.png') repeat-y center top / 100% auto;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: none;
+    padding: 10px 20px;
+}
+
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+}
+.logo-icon {
+    width: 20px; /* Adjust the width as per your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+/* Arrow styles */
+nav ul li a::after
+  {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #0087FF; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a::before {
+    top: 50%;
+}
+
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    border-top-color: #0087FF; /* Hover arrow color */
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    box-shadow: none;
+    z-index: 10;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li .dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    font-weight: normal; /* Normal font weight for dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: transparent;
+}
+
+.contact-us {
+    color: #fff;
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    border-radius: 5px;
+}
+/* Mobile menu styles */
+/* Show mobile menu button on mobile view */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block; /* Show mobile menu on mobile */
+    }
+
+    .mobile-menu-button {
+        display: block; /* Show menu button on mobile */
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: transparent;
+        background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient text color */
+        -webkit-background-clip: text;
+        background-clip: text;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .mobile-dropdown {
+        display: none; /* Hide dropdown by default */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fefefe;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .mobile-dropdown.show {
+        display: block; /* Show dropdown when .show is added */
+    }
+}
+
+/* Hide mobile menu on desktop view */
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none; /* Hide mobile menu on desktop */
+    }
+
+    .mobile-menu-button {
+        display: none; /* Hide menu button on desktop */
+    }
+}
+
+/* Styles for the dropdown items */
+.mobile-dropdown li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-dropdown li a {
+    color: #3047B0; /* Color of the links */
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-dropdown li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Gradient effect for .back-button */
+/* Gradient effect for .back-button */
+.back-button {
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background-color: #0087FF;
+}
+ 
+
+/* Intro section styles */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.intro-text1 {
+    flex: 0 0 33.33%; /* Takes 1/3 of the space */
+    padding: 0px;
+    background-color: transparent;
+    margin-right: 20px; /* Add some space between the sections */
+}
+
+.intro-text1 h1 {
+    font-size: 70px; /* Increase the size */
+    font-weight: bold;
+    color: #333;
+}
+
+.intro-text1 .highlight {
+    font-size: 100px; /* Increase the size more for the highlight */
+    color: #0087FF;
+    background: #0087FF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.intro-text1 h2 {
+    font-weight: lighter;
+}
+
+.highlighted-word {
+    color: #0087FF;
+    font-weight: bold;
+}
+
+.find-job {
+    flex: 0 0 60%; /* Takes 2/3 of the space */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+ }
+
+.find-job h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.find-job p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.dropdowns label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.dropdowns select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.dropdowns input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.generate-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(45deg, #3047B0, #0087FF); /* Gradient background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(180deg, #3047B0, #0087FF); /* Gradient background */
+}
+
+/* Modal Styles */
+/* Modal Styles */
+/* Desktop view (default) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Set max width for larger screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Align text and elements to the left */
+    position: relative; /* For close button positioning */
+}
+
+.close {
+    color: #aaa;
+    position: absolute; /* Position close button */
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#job-url {
+    color: #0087FF; /* Pink color for the link */
+    display: block; /* Display as block for better spacing */
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none; /* Remove underline */
+}
+
+#job-url:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#qr-code {
+    display: block;
+    margin: 20px auto; /* Center the QR code */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999; /* Ensure it's above modal */
+}
+
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Increased gap between buttons */
+    justify-content: center; /* Center-align buttons horizontally */
+}
+
+.share-buttons h2 {
+    flex: 0 0 auto; /* Don't grow, don't shrink, stay auto */
+    margin-right: 10px; /* Space between "Share Via" and buttons */
+}
+
+.share-buttons button {
+    padding: 12px ; /* Slightly bigger padding */
+    font-size: 16px; /* Increased font size */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: transparent; /* Pink background color */
+    color: white; /* White text color */
+    text-align: center; /* Center-align text */
+}
+
+/* Share button logos */
+#share-button-whatsapp {
+    background-image: url('output-onlinepngtools\ \(1\).png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-line {
+    background-image: url('output-onlinepngtools\ \(2\).png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-facebook {
+    background-image: url('output-onlinepngtools\ \(3\).png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-IG {
+    background-image: url('output-onlinepngtools\ \(4\).png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#share-button-TikTok {
+    background-image: url('tiktokpink-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+ 
+
+/* Footer styles */
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgba(66, 66, 66, 0.9);
+    color: white;
+    bottom: 0; /* Positions it at the bottom */
+    width: 98%; /* Ensures it spans the entire width of the page */
+    position: fixed; /* Position it normally within the flow */
+     margin-top: 50px; /* Space above the footer */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    footer{
+        position: relative;
+    }
+    nav ul {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-video {
+        max-width: 100%;
+    }
+
+    .job-section {
+        flex-direction: column;
+    }
+
+    .mobile-dropdown.show {
+        display: block;
+    }
+    .intro-text1 h1{
+        font-size: 30px; /* Adjust this size as needed */
+    }
+    .intro-text1 .highlight{
+        font-size: 50px;
+    }
+   
+        .hot-job, .find-job {
+            width: 100%;
+            padding: 0px;
+            margin: 0px 0;
+        }
+    
+        .hot-job h1, .find-job h1 {
+            font-size: 14px;
+        }
+    
+        .hot-job p, .find-job p {
+            font-size: 14px;
+        }
+    
+        .apply-btn, .generate-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        .dropdowns label {
+            font-size: 14px;
+        }
+    
+        .dropdowns select {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        /* Mobile view */
+        .modal {
+            display: block; /* Display modal in mobile view */
+        }
+    
+        .modal-content {
+            width: 90%; /* Increase width to 90% on smaller screens */
+            margin: 20% auto; /* Increase top margin for better positioning */
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+    
+        .close {
+            font-size: 24px; /* Reduce font size for smaller screens */
+            top: 5px; /* Adjust positioning */
+            right: 10px; /* Adjust positioning */
+        }
+    
+        #job-url {
+            font-size: 16px; /* Reduce font size for smaller screens */
+        }
+    }
+    
+    /* Hide modal for screens larger than 768px */
+    @media (min-width: 769px) {
+        .modal {
+            display: none; /* Hide modal in desktop view */
+        }
+    }
