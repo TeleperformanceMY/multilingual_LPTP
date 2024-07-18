@@ -1,471 +1,290 @@
-/* Reset and global styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* styles.css */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    overflow-x:hidden;
-}
-
+/* Reset and general styles */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    /* Background image with cover to fit the screen */
-    background: url('abstract-smoke-background-with-stars-transparent-background-modern-illustration-stars-glitter-dust-pink-purple-mist-clouds-fantasy-galaxy-background_76964-92508.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    color: #fff;
-    overflow-x: hidden;
+    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    width: 100%; /* Ensure body fits within mobile width */
+    color: #333;
+    background: url('GMT_TP_Wave_Sep23_PurplePink2.png') repeat-y center top / 100% auto;
 }
-
-
 
 /* Header styles */
-.header {
+header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    background-color: white;
+    box-shadow: none;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
     position: relative;
-    width: 100%;
- }
-
-/* Logo and title container */
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px; /* Space between logo section and dropdowns */
+    margin: 0 10px;
 }
 
-.logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-:root {
-    --brand-primary: #44D688;
-    --font-family-display: Monoton, Arial, sans-serif;
-    --font-family-primary: 'Rubik', Arial, sans-serif;
-    --neon-effect: 0 0 0 transparent,
-      0 0 20px rgb(255, 0, 255),
-      0 0 50px rgba(255, 0, 255, .5),
-      0 0 200px rgba(255, 0, 255, .5),
-      0 0 250px rgba(255, 0, 255, 1),
-      0 0 300px rgba(255, 0, 255, 1),
-      -250px -100px 100px rgba(255, 0, 255, 1)
-    ;
-  }
-  
-  .title {
-    color: #FF88FF;
-    font-family: Monoton, Arial, sans-serif;
-    font-size: 45px;
-    font-weight: normal;
-    text-shadow: 
-      0 0 0 transparent,
-      0 0 20px rgb(255, 0, 255),
-      0 0 50px rgba(255, 0, 255, 0.5),
-      0 0 200px rgba(255, 0, 255, 0.5),
-      0 0 250px rgba(255, 0, 255, 1),
-      0 0 300px rgba(255, 0, 255, 1),
-      -250px -100px 100px rgba(255, 0, 255, 1);
-    text-transform: uppercase;
-    transform: skew(0, -12deg) rotateZ(5deg);
-    white-space: nowrap;
-    animation: neon-blink 5s infinite alternate;
-    text-align: left;
-  }
-  
-  @keyframes neon-blink {
-    0%, 100% {
-      text-shadow: 
-        0 0 0 transparent,
-        0 0 20px rgb(255, 0, 255),
-        0 0 50px rgba(255, 0, 255, 0.5),
-        0 0 200px rgba(255, 0, 255, 0.5),
-        0 0 250px rgba(255, 0, 255, 1),
-        0 0 300px rgba(255, 0, 255, 1),
-        -250px -100px 100px rgba(255, 0, 255, 1);
-    }
-    50% {
-      text-shadow: 
-        0 0 0 transparent,
-        0 0 10px rgb(255, 0, 255),
-        0 0 25px rgba(255, 0, 255, 0.25),
-        0 0 100px rgba(255, 0, 255, 0.25),
-        0 0 125px rgba(255, 0, 255, 0.5),
-        0 0 150px rgba(255, 0, 255, 0.5),
-        -125px -50px 50px rgba(255, 0, 255, 0.5);
-    }
-  }
-  
-
-/* Dropdown menu styling */
-.dropdown-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px; /* Space between dropdowns and social buttons */
-}
-
-.dropdown, .dropdown1, .response-message,.response-message1, .button-40, .text, .button-group {
-    width: auto; /* Set width to 80% of the header width */
-    max-width: 800px; /* Set maximum width to 500px */
-    display: block;
- 
- 
- 
-  }
-
- 
-
-.dropbtn, .dropdown1 h2, .dropdown1 h3, .dropdown-content select {
-    background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
-    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
-        color: black;
+nav ul li a {
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    padding: 10px;
+    position: relative;
+}
+.logo-icon {
+    width: 20px; /* Adjust the width as per your design */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
+    vertical-align: middle; /* Align the logo vertically with the text */
 }
 
-/* Social buttons container */
-.social-buttons {
-    display: flex;
-    gap: 10px;
+/* Arrow styles */
+nav ul li a::after
+  {
+    content: '';
     position: absolute;
-    top: 20px; /* Position at the top */
-    right: 20px; /* Position at the right corner */
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ff0082; /* Default arrow color */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
 }
 
-.social-btn {
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+nav ul li a::before {
+    top: 50%;
 }
 
-.fb-btn {
-    background-image: url('fbpiink-removebg-preview.png'); /* Add Facebook logo */
+nav ul li a:hover::after,
+nav ul li a:hover::before {
+    border-top-color: #ff0082; /* Hover arrow color */
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
 }
 
-.ig-btn {
-    background-image: url('igpinnk-removebg-preview.png');
-}
-
-.yt-btn {
-    background-image: url('utpink-removebg-preview.png'); /* Add YouTube logo */
-}
-.in-btn {
-    background-image: url('inpink-removebg-preview.png'); /* Add YouTube logo */
-}
-.x-btn {
-    background-image: url('xpink-removebg-preview.png'); /* Add YouTube logo */
-}
-.linktree-btn {
-    background-image: url('output-onlinepngtools.png'); /* Add YouTube logo */
-}
-.tiktok-btn {
-    background-image: url('tiktokpink-removebg-preview.png'); /* Add YouTube logo */
-}
-/* Hover effect for social buttons */
-.social-btn:hover, .social-btn:focus {
-    border-color: #662222; /* Change border color on hover */
-    opacity: 0.9;
-}
-
-
-.dropbtn, .dropdown1 h2, .dropdown1 h3, .dropdown-content select {
- 
-    padding: 20px;
-    width: 100%;
-    max-width: 100%;    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-     box-sizing: border-box;
-     transition: background-color 0.3s ease;
-     font-weight: bold;
-      border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-     text-align: center;
-     display: inline-block;
-     margin: 0 auto;
-}
-
-
-.video-button:hover, .glowing-button:hover, .dropbtn:hover, .dropdown1:hover .dropdown1 h2, .dropdown1:hover .dropdown1 h3, .dropdown-content select:hover {
-    background-image: radial-gradient(circle at center top, rgb(209, 213, 219), rgb(103, 32, 112), rgb(234, 88, 12));
-}
-
-.dropdown-content {
+nav ul li .dropdown {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100%; /* Ensure the dropdown content spans the full width of its container */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-    box-sizing: border-box;
+    top: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    box-shadow: none;
+    z-index: 10;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 10px 14px;
-    text-decoration: none;
+nav ul li:hover .dropdown {
     display: block;
-    transition: background-color 0.3s;
-    white-space: nowrap; /* Prevent text from wrapping */
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
+nav ul li .dropdown li {
+    margin: 0;
+    padding: 0;
 }
 
-.dropdown:hover .dropdown-content, .dropdown1:hover .dropdown-content {
+nav ul li .dropdown li a {
+    padding: 10px 20px;
     display: block;
-    
+    color: #333;
+    font-weight: normal; /* Normal font weight for dropdown items */
+    white-space: nowrap; /* Ensures text is in one line */
 }
 
-/* Select box styling */
-.dropdown1 select {
-    padding: 20px;
-    width: 100%;
-    max-width: 100%;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(rgb(226, 29, 209), rgb(243, 165, 237));
-    color: white;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-weight: bold;
-     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-
+nav ul li .dropdown li a:hover {
+    background-color: transparent;
 }
 
-.dropdown1 select:focus {
-    outline: none;
-    
-    box-shadow: 0 0 5px rgba(172, 33, 33, 0.658);
-}
-
-.dropdown1 select option {
-    background: rgb(214, 214, 180);
-    color: rgb(58, 58, 58);
-}
-
-/* Glowing effect for buttons */
-.glowing-button, .video-button, .button-group button {
-    animation: glowing 1500ms infinite;
-}
-.glowing-button {
-    display: block;
-    width: 200px; /* Adjust the width as needed */
-    padding: 20px; /* Increase padding for larger size */
-    font-size: 24px; /* Increase font size */
-    border: none;
-    border-radius: 10px;
-    background-image: linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), radial-gradient(112.35% 100% at 67.1% 8.5%, #2AD0CA 0%, #E1F664 22.92%, #FEB0FE 46.87%, #ABB3FC 68.23%, #5DF7A4 87.5%, #58C4F6 100%);
-    background-blend-mode: screen, difference, normal;
-background-image: linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), linear-gradient(101.45deg, #FFFFFF 4.42%, #000000 33.79%, #FFFFFF 59.83%, #000000 86.98%, #FFFFFF 110.81%), radial-gradient(112.35% 100% at 67.1% 8.5%, #2AD0CA 0%, #E1F664 22.92%, #FEB0FE 46.87%, #ABB3FC 68.23%, #5DF7A4 87.5%, #58C4F6 100%);
-background-blend-mode: screen, difference, normal;
-        color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    text-decoration: none; /* Remove default underline */
-    animation: glowing 1500ms infinite;
-
-}
-
-.glowing-button:hover {
-    background-color: #8a3963;
-}
-
-@keyframes glowing {
-    0% {
-        box-shadow: 0 0 10px #FF0082;
-    }
-    50% {
-        box-shadow: 0 0 20px #FF0082;
-    }
-    100% {
-        box-shadow: 0 0 10px #FF0082;
-    }
-}
-.language-dropdown select {
-
-  background: linear-gradient(135deg, #ff85c0, #d56dd7); /* Pink to purple gradient */
-  color: #fff; /* White text color */
-  font-family: 'Rubik', Arial, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #ff85c0, 0 0 20px #d56dd7; /* Glowing effect */
-
-      padding: 10px;
-    font-size: 16px;
-        background-image: url('dropdown_arrow.png'); /* Add custom arrow icon */
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* Position arrow icon */
-    background-size: 20px; /* Size of the arrow icon */
-}
-
-
-
-/* Adjusted size and positioning of the button under the video */
-.video-button {
-    display: block;
-    width: 80%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(135deg, #0E0220 0%, #000000 6px, #E40475 24.8%, #0E0220 35%, #48E0E4 56.3%, #48E0E4 62.4%, #FF00C8 72.9%, #000000DB 78.5%, #48E0E4 100%);
+.contact-us {
     color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    border-radius: 5px;
 }
 
-.video-button:hover {
-    background-color: #D7006E;
-}
 
-/* Enhanced dropdown styling in the footer */
-footer .dropdown-content {
-     color: black; /* Adjusted to match header */
-}
-
-/* Adjusted position of the button in the footer */
-footer  {
-    margin-top: 30px;
-}
-
-/* Footer dropdown default option styling */
-.dropdown1 select option[disabled] {
-    color: #999; /* Adjusted color for disabled option */
-}
-
-.dropdown1 select option[selected] {
-    display: none; /* Hide the selected option from the dropdown */
-}
-
-/* Main content styles */
-main {
-    flex: 1;
+/* Intro section styles */
+.intro {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('path/to/doodle-background.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 20px;
-    width: 100%;
+    background-color: transparent;
+    flex-wrap: wrap;
 }
 
-.video-container {
-    width: 100%;
-    max-width: 750px;
-    position: relative;
-    margin: 20px ;
+.intro-text {
+    flex: 1;
+    padding: 0px;
+    background-color: transparent;
 }
 
-video {
-    width: 100%;
-    height: auto;
+.intro-text h1 {
+    font-size: 70px; /* Increase the size */
+    font-weight: bold;
+    color: #333;
+}
+
+.intro-text .highlight {
+    font-size: 100px; /* Increase the size more for the highlight */
+    color: #ff0082;
+    background: #ff0082 ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.intro-video {
+    flex: 2;
+    max-width: 66%;
     border: 10px solid #FF0082;
     border-radius: 10px;
+    background-color: transparent;
 }
 
-
-
- 
-.ad-sticker {
-    position: left;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
-    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
-        color: black;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer styles */
-footer {
+/* Job section styles */
+.job-section {
+    position: relative;
     display: flex;
-    flex-direction: row; /* Split into two halves horizontally */
-    justify-content: space-between; /* Space evenly between the two halves */
-    align-items: center; /* Center items vertically */
     padding: 20px;
-
-    background: linear-gradient(45deg, rgba(120, 0, 150, 0.5), rgba(255, 0, 130, 0.5)); /* Faded gradient background */
-    color: #ff69b4; /* Pinkish color */
+    background-color: rgba(255,255,255,0.9);
+    flex-wrap: wrap;
 }
 
-.footer-half {
-    width: 45%; /* Each half takes 48% of the width with a small gap between */
-    text-align: center; /* Center align content within each half */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('GMT_TP_Wave_Sep23_PurplePink.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+.container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
 }
 
-.dropdown1 {
-    text-align: left; /* Adjust alignment of text content within dropdown */
-    margin: 0 auto; /* Center the entire dropdown horizontally */
+.generate-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px; /* Space between button and h1 */
 }
 
- 
-
-
-footer h2, footer h3 {
-    margin: 10px 0;
+.hot-job {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 33%;
 }
 
- 
-
-.show {
-    display: block;
+.find-job {
+    flex: 2;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 66%;
 }
 
+.hot-job h2, .find-job h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
 
+.hot-job h1, .find-job h1 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hot-job p, .find-job p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.highlighted-word {
+    color: #ff0082;
+    font-weight: bold;
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.dropdowns label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.dropdowns select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.apply-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.generate-btn {
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+}
+
+.apply-btn {
+    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+}
+
+.apply-btn:hover, .generate-btn:hover {
+    background: linear-gradient(45deg, #ff6b6b, #ff0082);
+}
+/* Modal Styles *//* Desktop view (default) */
 /* Modal Styles */
+/* Desktop view (default) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -475,7 +294,7 @@ footer h2, footer h3 {
     width: 100%;
     height: 100%;
     overflow: auto; /* Enable scrolling if needed */
-    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
 }
 
 .modal-content {
@@ -486,12 +305,16 @@ footer h2, footer h3 {
     width: 80%; /* Could be more or less, depending on screen size */
     max-width: 600px; /* Set max width for larger screens */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Align text and elements to the left */
+    position: relative; /* For close button positioning */
 }
 
 .close {
     color: #aaa;
-    float: right;
+    position: absolute; /* Position close button */
+    top: 10px;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
 }
@@ -503,39 +326,64 @@ footer h2, footer h3 {
     cursor: pointer;
 }
 
-/* Special fonts for headings */
-h2 {
-    font-family: 'YourSpecialFont', sans-serif;
-    color: #FF006B;
+#job-url {
+    color: #ff0082; /* Pink color for the link */
+    display: block; /* Display as block for better spacing */
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none; /* Remove underline */
 }
 
-#job-url {
+#job-url:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+#qr-code {
     display: block;
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #333;
+    margin: 20px auto; /* Center the QR code */
+}
+
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 999; /* Ensure it's above modal */
 }
 
 .share-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Increased gap between buttons */
+    justify-content: center; /* Center-align buttons horizontally */
+    background-color: transparent; /* Pink background color */
+
+}
+
+.share-buttons h2 {
+    flex: 0 0 auto; /* Don't grow, don't shrink, stay auto */
+    margin-right: 10px; /* Space between "Share Via" and buttons */
 }
 
 .share-buttons button {
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 12px ; /* Slightly bigger padding */
+    font-size: 24px; /* Increased font size */
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
- }
+     text-align: center; /* Center-align text */
+}
 
 /* Share button logos */
 #share-button-whatsapp {
-    background-image: url('image\ \(11\)-Photoroom.png');
+    background-image: url('image (11)-Photoroom.png');
     background-repeat: no-repeat;
-    background-size: contain;
-    background-color: var(--neon-effect);
+    background-size: 24px;
 
 }
 
@@ -543,492 +391,181 @@ h2 {
     background-image: url('output-onlinepngtools-Photoroom.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--neon-effect);
-
 }
 
 #share-button-facebook {
     background-image: url('fbpiink-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--neon-effect);
-
 }
 
 #share-button-IG {
     background-image: url('igpinnk-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--neon-effect);
-
 }
 
 #share-button-TikTok {
     background-image: url('tiktokpink-removebg-preview.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: var(--neon-effect);
 }
 
 
-.button-40, .button-group {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
-    border: .25em solid var(--glow-color);
-    padding: 1em 3em;
-    color: var(--glow-color);
-    padding: 20px;
-    width: 100%;
-    max-width: 100%;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+/* Footer styles */
+footer {
+    padding: 10px 20px;
     text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-          0 0 4em 1em var(--glow-spread-color),
-          inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
-    position: relative;
-    transition: all 0.3s;
-    }
-  
-  .button-40::after,  .button-group::after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 120%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--glow-spread-color);
-    filter: blur(2em);
-    opacity: .7;
-    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
-  }
-  
-  .button-40:hover,  .button-group:hover {
-    color: var(--btn-color);
-    background-color: var(--glow-color);
-    box-shadow: 0 0 1em .25em var(--glow-color),
-          0 0 4em 2em var(--glow-spread-color),
-          inset 0 0 .75em .25em var(--glow-color);
-  }
-  
-  .button-40:active, .button-group:active {
-    box-shadow: 0 0 0.6em .25em var(--glow-color),
-          0 0 2.5em 2em var(--glow-spread-color),
-          inset 0 0 .5em .25em var(--glow-color);
-  }
-  .response-message
-  {    position: left;
-    top: 20px;
-     right: 20px;
-     padding: 20px;
-     width: 100%;
-     max-width: 100%;
-      background-image: radial-gradient(80.99% 100% at 50% 0%, #00FF0A 0%, #36008E 100%), radial-gradient(50% 123.47% at 50% 50%, #EFE7C8 0%, #36008E 100%), linear-gradient(301.28deg, #FF006B 0%, #48DD9E 100%), linear-gradient(294.84deg, #5A60E4 0%, #D30000 100%), linear-gradient(52.29deg, #000000 0%, #00FF85 100%), radial-gradient(100% 138.69% at 100% 0%, #0007A5 0%, #FF7A00 100%), radial-gradient(70.41% 100% at 50% 0%, #D5B300 0%, #2200AA 100%);
-    background-blend-mode: screen, screen, lighten, overlay, lighten, difference, normal;
-    
-        color: black;
-        font-weight: bold;
-        border: 2px solid black;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        display: inline-block;
-        margin: 0 auto;}
-  
-  .response-message:hover {
-    background-color: #4b006e; /* Darker purple on hover */
-  }
-  .full-width-section {
-    width: 100%;
-    text-align: center; /* Center content horizontally */
-}
-
-.response-message1 {
-    padding: 20px;
-    width: 100%;
-    max-width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(134deg, #A9CBFE 0%, #FEFFF5 14.1%, #FFCEFF 26.3%, #DFECFF 37.6%, #EBF9F9 47.5%, #AFEBED 62.5%, #B3F5D2 74.9%, #DADAA7 88.8%, #DDA0A2 100%);
-    background-blend-mode: soft-light, normal;
-    color: black;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-}
-
-
-.response-message1:hover {
-     background-color: #4b006e; /* Darker purple on hover */
-}
-
-/* Adjusting .response-message1 for mobile view */
-
-
-
-  
-#show-more {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
-    border: .25em solid var(--glow-color);
-    padding: 1em 3em;
-    color: var(--glow-color);
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-                0 0 4em 1em var(--glow-spread-color),
-                inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
-    position: relative;
-    transition: all 0.3s;
-    font-weight: bold;
-    text-align: center; /* Center align the text */
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%; /* Ensure full width on mobile */
-    max-width: 300px; /* Adjust max width as needed */
-}
-
-#show-more:hover {
-    text-decoration: underline; /* Underline text on hover */
-}
-
-/* Hashtags under the video */
-
-
-.hashtags-under {
+    background-color: rgba(66, 66, 66, 0.9);
+    color: white;
+    position: relative; /* Position it normally within the flow */
+     margin-top: 50px; /* Space above the footer */
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
-    position: relative; /* Use relative if the container is static */
-    top: 20px; /* Adjust based on the spacing needed below the video */
-    width: 100%;
-    margin: 0 auto;
-    z-index: -1; /* Ensure it stays behind other content */
 }
 
-.hashtags-left span, .hashtags-right span, .hashtags-under span {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.hashtags-left span, .hashtags-right span, .hashtags-under span:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Hashtags on the right side */
-.hashtags-right {
-    display: flex;
-    flex-direction: column; /* Align vertically */
-    position: fixed;
-    right: 10px; /* Adjust based on the desired spacing from the right */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    width: auto;
-    z-index: -1; /* Ensure it stays behind other content */
-}
-
-/* Hashtags on the left side */
-.hashtags-left {
-    display: flex;
-    flex-direction: column; /* Align vertically */
-    position: fixed;
-    left: 10px; /* Adjust based on the desired spacing from the left */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    width: auto;
-    z-index: -1; /* Ensure it stays behind other content */
-}
-.footer-select {
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px;
-    font-size: 14px;
-}
-
-.footer-select + .footer-select {
-    border-top: 1px solid #ccc; /* Line between selects */
-    padding-top: 15px; /* Add padding to avoid overlap */
-}
-
-.button-group {
-    margin-top: 20px; /* Add space before the button */
-}
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    footer {
-        flex-direction: column; /* Change to column for smaller screens */
-        align-items: center; /* Center align items */
-        text-align: center;
-    }
-
-    .footer-half {
-        width: 100%; /* Full width for each half in column layout */
-        padding: 0 10px; /* Adjusted padding */
-    }
-
-    .footer-half:last-child {
-        margin-bottom: 0; /* Remove bottom margin for the last half */
-    }
-
-    .button-group {
-        flex-direction: column;
-        gap: 10px; /* Reduced gap between buttons */
-    }
-
-    .logo {
-        width: 60px;
-        position: relative; /* Ensure correct stacking context */
-        z-index: 1; /* Ensure it stays above other elements */
-        margin-bottom: 20px; /* Adjusted space below the logo */
-    }
-
-    .social-btn {
-        width: 25px;
-        height: 25px;
-    }
-
-    .video-button {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .ad-sticker {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    .button-group button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .dropdown, .dropdown1 {
-        width: 100%;
-        
-        
-    }
-
-    .dropdown-content {
-        min-width: 100%;
-        
-    }
-
-    .dropdown1 select {
-        font-size: 14px;
-    }
-
-    .social-buttons {
-        margin-bottom: 10px; /* Adjusted margin */
-        position: relative; /* Ensure correct stacking context */
-        z-index: 1; /* Ensure it stays above other elements */
-    }
-
-    /* Adjusting .response-message for mobile view */
-     .response-message1 {
-        font-size: 14px; /* Slightly smaller font size for better readability */
-        padding: 12px 15px; /* Adjust padding for mobile view */
-        max-width: 100%; /* Ensure it takes up full width on mobile */
-        background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(134deg, #A9CBFE 0%, #FEFFF5 14.1%, #FFCEFF 26.3%, #DFECFF 37.6%, #EBF9F9 47.5%, #AFEBED 62.5%, #B3F5D2 74.9%, #DADAA7 88.8%, #DDA0A2 100%);
-        background-blend-mode: soft-light, normal;
-        color: black;
-        font-weight: bold;
-        border: 2px solid black;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        display: inline-block;
-        margin: 0 auto;
-    }
-
-    .response-message1 {
-        font-size: 14px; /* Slightly smaller font size for better readability */
-        padding: 15px; /* Adjust padding for mobile view */
-    }
-
-    .footer-half {
-        position: relative;
-        padding-bottom: 15px;
-     }
-
-    .footer-half::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 5px;
-        background-color: black;
-        box-shadow: 0 0 10px blue;
-    }
-}
-* {
-    box-sizing: border-box;
+.footer-left, .footer-right {
     margin: 0;
-    padding: 0;
 }
 
-
-
-@media (max-width: 768px)
-
-
-{
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-        max-width: 100%; /* Ensure body fits within mobile width */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
     }
 
-    .image {
-        max-width: 100%;
-        height: auto; /* Ensure images fit within the viewport width */
-    }
-    /* Additional adjustments to ensure full width */
-    .text-content, .button-group, .dropdown, .dropdown1, .response-message {
-        width: 100%;
-        max-width: 100%;
-    }
-    .header, .logo-container, .footer {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .mobile-menu {
+        display: block;
     }
 
-    .header {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .intro {
         flex-direction: column;
     }
 
-    .logo-container {
-        position: relative;
-        z-index: 1;
-    }
-
-    .title {
-        font-size: 18px;
-        margin: 0;
-    }
-
-    .hashtags {
-        top: static;
-     }
-
-    .hashtags-right {
-        display: none; /* Hide right and left hashtags on mobile */
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%; /* Ensure footer is full width */
-    }
-
-    .footer-half {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .footer-half:last-child {
-        margin-bottom: 0;
-    }
-
-    .button-group {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%; /* Ensure buttons fit within mobile width */
-    }
-
-    .logo {
-        width: 60px;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 40px;
-    }
-
-    .social-btn {
-        width: 25px;
-        height: 25px;
-    }
-
-    .video-button {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .ad-sticker {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    .button-group button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .dropdown, .dropdown1 {
-        width: 100%;
-    }
-
-    .dropdown-content {
-        min-width: 100%;
-    }
-
-    .dropdown1 select {
-        font-size: 14px;
-    }
-
-    .social-buttons {
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .response-message {
-        font-size: 14px;
-        padding: 12px 15px;
+    .intro-video {
         max-width: 100%;
     }
 
-    .container {
-        padding: 0 15px; /* General padding for mobile view */
-        max-width: 100%; /* Ensure container fits within mobile width */
+    .job-section {
+        flex-direction: column;
     }
 
-    .content {
-        margin: 0 auto;
-        max-width: 100%; /* Ensure full width content */
+    .mobile-dropdown.show {
+        display: block;
     }
-
+    .intro-text h1{
+        font-size: 30px; /* Adjust this size as needed */
+    }
+    .intro-text .highlight{
+        font-size: 50px;
+    }
+   
+        .hot-job, .find-job {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+    
+        .hot-job h1, .find-job h1 {
+            font-size: 14px;
+        }
+    
+        .hot-job p, .find-job p {
+            font-size: 14px;
+        }
+    
+        .apply-btn, .generate-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+        }
+    
+        .dropdowns label {
+            font-size: 14px;
+        }
+    
+        .dropdowns select {
+            font-size: 14px;
+            padding: 8px;
+        }
   
-    .text-content {
-        font-size: 14px;
-        line-height: 1.5;
+        /* Mobile view */
+        .modal {
+            display: block; /* Display modal in mobile view */
+        }
+    
+        .modal-content {
+            width: 90%; /* Increase width to 90% on smaller screens */
+            margin: 20% auto; /* Increase top margin for better positioning */
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+    
+        .close {
+            font-size: 24px; /* Reduce font size for smaller screens */
+            top: 5px; /* Adjust positioning */
+            right: 10px; /* Adjust positioning */
+        }
+    
+        #job-url {
+            font-size: 16px; /* Reduce font size for smaller screens */
+        }
+    }
+    /* Basic styling for mobile menu toggle and dropdown */
+.mobile-menu {
+    display: none; /* Hide mobile menu by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 1000;
+}
+
+.mobile-menu-list {
+    list-style-type: none; /* Remove bullet points from menu */
+    padding-left: 0; /* Remove default padding */
+}
+
+.mobile-menu-list li {
+    border-bottom: 1px solid #ddd; /* Optional: Add separators between menu items */
+}
+
+.mobile-menu-list li ul {
+    display: none; /* Hide submenus by default */
+}
+
+.mobile-menu-list li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu-toggle {
+    display: none; /* Hide toggle button initially */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Hide desktop menu on smaller screens */
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    .mobile-menu.open {
+        display: block; /* Show mobile menu when 'open' class is applied */
+    }
+
+    .mobile-menu-list li:hover > ul {
+        display: block; /* Show submenu on hover */
     }
 }
