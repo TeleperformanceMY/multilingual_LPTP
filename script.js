@@ -1,172 +1,322 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const languages = {
         en: {
-            title: "On The Hunt For THE ONE!",
-            ad: "Are You The One ?!",
-            join: "Expect our response in 24 hours, no ifs, ands, or buts!",
-            videoSrc:"Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4",
-             moreJobs: "Generate QR and Link to Apply With US !!"
+            about_us: "About Us",
+            careers: "Careers",
+            hot_job: "🔥 Hot Job 🔥",
+            opportunities: "🌟 Opportunities 🌟",
+            refer_friend: "Refer A Friend",
+            stay_connected: "Stay Connected",
+            contact_us: "contact Us",
+            language: 'language',
+            hot_job_content: "Hot Job Of The Week!",
+            hot_job_description: "Check out our <strong>“Hot Job of the Week”</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!",
+            apply_now: "Apply Now!",
+            find_job: "Find your perfect job!",
+            choose_language: "language",
+            choose_location: "Choose your location",
+            choose_job_type: "Choose your job type",
+            generate_qr: "Generate QR Code & Apply Now!",
+            intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
+            team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+            intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
+            intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+            share_via: "share viia"
+
+
         },
         zh: {
-            title: "寻找TA！",
-            ad: "你是TA吗？！",
-            join: "期待我们在24小时内回复，不折不扣！",
-            videoSrc: "Teleperformance Family in Malaysia_ A Great Place to Work with and Grow in the APAC Region (2).mp4",
-             moreJobs: "Generate QR and Link to Apply With US !!"
+            about_us: "关于我们",
+            careers: "职业机会",
+            hot_job: "🔥 热门职位 🔥",
+            opportunities: "🌟 机会 🌟",
+            refer_friend: "介绍个朋友",
+            stay_connected: "保持联系",
+            contact_us: "联系我们",
+            language: '语言',
+
+            hot_job_content: "本周热门职位!",
+            hot_job_description: "查看我们的<strong>“本周热门职位”</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
+            apply_now: "立即申请！",
+            find_job: "找到你的理想工作！",
+            choose_language: "首选语言",
+            choose_location: "选择您的位置",
+            choose_job_type: "选择您的工作类型",
+            generate_qr: "生成二维码并立即申请！",
+            intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
+            team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            intro_text1: "      找到你的完美 <span class='highlight'>工作！</span>",
+            intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            share_via: "分享"
+
+
         },
         jp: {
-            title: "THE ONEを探しています！",
-            ad: "あなたはTHE ONEですか？！",
-            join: "24時間以内の回答を期待してください、何の条件もありません！",
-            videoSrc: "JPVID (1) (1).mp4",
-             moreJobs: "Generate QR and Link to Apply With US !!"
+            about_us: "会社概要",
+            careers: "採用情報",
+            hot_job: "🔥 ホットジョブ 🔥",
+            opportunities: "🌟 採用情報 🌟",
+            refer_friend: "友達紹介",
+            stay_connected: "つながりを続ける  ",
+            contact_us: "お問い合わせ",
+            language: '言語',
+
+            hot_job_content: "今週の注目のお仕事!",
+            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+            apply_now: "今すぐ応募!",
+            find_job: "理想の仕事を見つける!",
+            choose_language: "勤務地を選択",
+            choose_location: "あなたの場所を選択してください",
+            choose_job_type: "職種を選ぶ",
+            generate_qr: "QRコードを作成し、今すぐご応募ください！",
+            intro_text: "私たちは<span class='highlight'>誰 か</span>を探していま",
+            team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            intro_text1: " 理想の<span class='highlight'>お仕事</span>を見つけましょう！",
+            intro_text2:  "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            share_via: "share via"
         }
     };
 
-    const languageDropdown = document.getElementById('languages');
-    const title = document.querySelector('.title');
-    const adSticker = document.querySelector('.ad-sticker p');
-    const footerText = document.querySelector('footer p');
-    const video = document.querySelector('.video-container video');
-    const main = document.querySelector('main');
-    const moreJobsButton = document.getElementById('show-more');
-    const moreOptions = document.getElementById('more-options');
-
+    // Elements to be translated
+    const elementsToTranslate = {
+        '.intro-text h1': 'intro_text',
+        '.hot-job p': 'hot_job_description',
+        '.find-job p': 'team_response',
+        '.generate-btn': 'generate_qr',
+        '.language-dropdown > a': 'choose_language',
+        '.find-job h2': 'find_job',
+        '.intro-text1 h1': 'intro_text1',
+        '.intro-text1 h2': 'intro_text2',
+        'header ul li:nth-child(1) > a': 'about_us',
+        'header ul li:nth-child(1) ul li:nth-child(1) > a': 'tp_malaysia',
+        'header ul li:nth-child(1) ul li:nth-child(2) > a': 'tp_thailand',
+        'header ul li:nth-child(3) > a': 'careers',
+        'header ul li:nth-child(2) ul li:nth-child(1) > a': 'hot_job',
+        'header ul li:nth-child(2) ul li:nth-child(2) > a': 'opportunities',
+        'header ul li:nth-child(2) ul li:nth-child(3) > a': 'refer_friend',
+        'header ul li:nth-child(3) > a': 'stay_connected',
+        'header ul li:nth-child(3) ul li:nth-child(1) > a': 'tpmy_instagram',
+        'header ul li:nth-child(3) ul li:nth-child(2) > a': 'tpth_instagram',
+        'header ul li:nth-child(3) ul li:nth-child(3) > a': 'tpmy_facebook',
+        'header ul li:nth-child(3) ul li:nth-child(4) > a': 'tpth_facebook',
+        '.contact-us': 'contact_us',
+        '.language-dropdown > a': 'language',
+        '.language-dropdown ul li:nth-child(1) > a': 'english',
+        '.language-dropdown ul li:nth-child(2) > a': 'mandarin',
+        '.language-dropdown ul li:nth-child(3) > a': 'japanese',
+        '.share-buttons h2': 'share_via',
+        '.hot-job h2': 'hot_job_content',
+        '.apply-btn': 'apply_now'
+    };
+    
+    
+    const dropdown = document.querySelector('.language-dropdown');
+    const selectDropdown = document.getElementById('languages');
     const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-    const sourceParam = urlParams.get('utm_source');
-    const mediumParam = urlParams.get('utm_medium');
-    const campaignParam = urlParams.get('utm_campaign') || 'default_campaign';
 
-    if (langParam && languages[langParam]) {
-        languageDropdown.value = langParam;
-        updateContent(langParam);
+    // Function to update content based on selected language
+    function updateContent(language) {
+        const langContent = languages[language];
+        if (langContent) {
+            Object.keys(elementsToTranslate).forEach(selector => {
+                const key = elementsToTranslate[selector];
+                const element = document.querySelector(selector);
+                if (element && langContent[key]) {
+                    element.innerHTML = langContent[key]; // Use innerHTML to render HTML content
+                }
+            });
+        }
     }
 
-    languageDropdown.addEventListener('change', (event) => {
+    // Event listener for language selection in dropdown menu
+    dropdown.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (event.target.tagName === 'A') {
+            const selectedLanguage = event.target.dataset.lang;
+            updateContent(selectedLanguage);
+            updateURLParameter('lang', selectedLanguage);
+        }
+    });
+
+    // Event listener for language selection in select#languages dropdown
+    selectDropdown.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
         updateContent(selectedLanguage);
         updateURLParameter('lang', selectedLanguage);
     });
 
-    function updateContent(language) {
-        const langContent = languages[language];
-        title.textContent = langContent.title;
-        adSticker.textContent = langContent.ad;
-        footerText.textContent = langContent.join;
-        video.src = langContent.videoSrc;
-        main.style.backgroundImage = `url('${langContent.background}')`;
-        moreJobsButton.textContent = langContent.moreJobs;
-
-        video.autoplay = true;
-        video.muted = false;
-
-        updateLinks();
-    }
-
+    // Function to update URL parameter
     function updateURLParameter(param, value) {
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set(param, value);
-        window.history.replaceState(null, '', currentUrl);
+        urlParams.set(param, value);
+        const newURL = `${window.location.pathname}?${urlParams.toString()}`; // Corrected quotation marks
+        window.history.replaceState(null, '', newURL);
     }
 
-    function updateLinks() {
-        const links = document.querySelectorAll('footer a, footer button[value]');
-        links.forEach(link => {
-            let url = link.href || link.value;
-            url = new URL(url);
-            const utmSource = url.searchParams.get('utm_source');
-            const utmMedium = url.searchParams.get('utm_medium');
-            const utmCampaign = url.searchParams.get('utm_campaign');
+    // Initial setup based on URL parameter or default language
+    const langParam = urlParams.get('lang') || 'en';
+    updateContent(langParam);
+});
 
-            if (utmSource && utmMedium && utmCampaign) {
-                url = generateFinalURL(url.toString(), utmSource, utmMedium);
-                link.href = url.toString();
-                link.value = url.toString();
-            }
-        });
+
+
+//Generating Final URL with UTM Parameters
+// Function to generate final URL with UTM parameters
+function generateFinalURL(baseURL, source, medium) {
+    let finalURL = new URL(baseURL);
+    let iisValue, iisnValue;
+
+    switch (medium) {
+        case 'social':
+            iisValue = "Social Media";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'career':
+            iisValue = "Career Fair";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'digital':
+            iisValue = "Digital Ad";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'mobile':
+            iisValue = "Mobile Stand";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'poster':
+            iisValue = "Poster";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'email':
+            iisValue = "Email Blast";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'physical':
+            iisValue = "Physical QR";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'banner1':
+            iisValue = "Banner 1";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'banner2':
+            iisValue = "Banner 2";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        case 'fotg':
+            iisValue = "FoTG";
+            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+            break;
+        default:
+            console.error("Unknown medium");
+            return baseURL; // Return base URL if medium is not recognized
     }
+  // Replace "utm_source=" and "utm_medium=" in source and medium
+  source = source.replace('utm_source=', '');
+  medium = medium.replace('utm_medium=', '');
+    finalURL.searchParams.set('mode', 'job');
+    finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
+    finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
 
-    function generateFinalURL(baseURL, source, medium) {
-        let finalURL = new URL(baseURL);
-        let iisValue, iisnValue;
-
-
-switch (medium) {
-    case 'social':
-        iisValue = "Social Media";
-        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-        break;
-   case 'career':
-        iisValue = "Career fair";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'digital':
-        iisValue = "Digital Ad";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'mobile':
-        iisValue = "mobile stand";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'Career':
-        iisValue = "Career Fair";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'mobile':
-         iisValue = "Mobile Stand";
-         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-    case 'poster':
-        iisValue = "Poster";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-         break;
-            case 'Social':
-        iisValue = "Social Media";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'flyers':
-        iisValue = "Flyers";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'physical':
-        iisValue = "Physical QR";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'FoTG':
-        iisValue = "FoTG";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'banner1':
-            iisValue = "banner1";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-    case 'banner2':
-            iisValue = "banner2";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-            case 'email':
-                        iisValue = "Email Blast";
-                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                        break;  
-   
-    default:
-        console.error("Unknown utm_medium");
-        return baseURL;
+    return decodeURIComponent(finalURL.toString());
 }
 
-        finalURL.searchParams.set('mode', 'job');
-        finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
-        finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
 
-        return decodeURIComponent(finalURL.toString());
+//Handling Click Event on Generate Button
+
+
+// Function to open QR modal and display QR code and job URL
+function openQrModal(url) {
+    const modal = document.getElementById('qr-modal');
+    const span = document.querySelector('.close');
+    const qrCanvas = document.getElementById('qr-code');
+    const jobUrl = document.getElementById('job-url');
+
+    jobUrl.href = url;
+    jobUrl.textContent = url;
+
+    new QRious({
+        element: qrCanvas,
+        value: url,
+        size: 200,
+    });
+
+    modal.style.display = "block";
+
+    span.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const generateBtn = document.getElementById('generate-btn');
+
+    if (generateBtn) {
+        generateBtn.addEventListener('click', () => {
+            const selectedLanguage = document.getElementById('language-select').value;
+            const selectedLocation = document.getElementById('location-select').value;
+            const selectedJob = document.getElementById('job-type-select').value;
+
+            // Check if options are selected
+            if (!selectedLanguage || !selectedLocation || !selectedJob) {
+                alert('Please select all options.');
+                return;
+            }
+
+            // Ensure jsonData is available
+            if (!jsonData) {
+                alert('Failed to fetch job data. Please try again later.');
+                return;
+            }
+
+            const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
+
+            if (jobData) {
+                // Get utm_source and utm_medium from current URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const sourceParam = urlParams.get('utm_source') || '';
+                const mediumParam = urlParams.get('utm_medium') || '';
+
+                const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
+                openQrModal(finalLink);
+            } else {
+                alert('Evergreen link not found for the selected job.');
+            }
+        });
+    } else {
+        console.error('#generate-btn button not found.');
     }
 
+    // Fetch JSON data (assuming this part remains unchanged)
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch job data.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            jsonData = data; // Assign fetched data to jsonData
+        })
+        .catch(error => {
+            console.error('Error fetching job data:', error);
+            alert('Failed to fetch job data. Please try again later.');
+        });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Function to open QR modal
     function openQrModal(url) {
         const modal = document.getElementById('qr-modal');
-        const span = document.getElementsByClassName('close')[0];
+        const span = document.querySelector('.close');
         const qrCanvas = document.getElementById('qr-code');
         const jobUrl = document.getElementById('job-url');
 
@@ -183,35 +333,19 @@ switch (medium) {
 
         span.onclick = () => {
             modal.style.display = "none";
-        }
+        };
 
         window.onclick = (event) => {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
-        }
+        };
     }
-
-    moreJobsButton.addEventListener('click', () => {
-        const selectedLanguage = document.getElementById('language-select').value;
-        const selectedLocation = document.getElementById('location-select').value;
-        const selectedJob = document.getElementById('job-type-select').value;
-
-        const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
-
-        if (jobData) {
-            const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
-            openQrModal(finalLink);
-        } else {
-            alert('Evergreen link not found for the selected job.');
-        }
-    });
-
-    updateLinks();
 });
 
-let jsonData = [];
+//Fetching JSON Data and Populating Dropdowns
 document.addEventListener('DOMContentLoaded', () => {
+    let jsonData = [];
     const languageDropdown = document.getElementById('language-select');
     const locationDropdown = document.getElementById('location-select');
     const jobDropdown = document.getElementById('job-type-select');
@@ -260,9 +394,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//Handling Click Event on Apply Button
 
 document.addEventListener('DOMContentLoaded', () => {
-    const customLink = document.getElementById('custom-link');
+    const customLink = document.getElementById('apply-btn');
 
     if (customLink) {
         customLink.addEventListener('click', (event) => {
@@ -282,87 +417,92 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Missing utm_source or utm_medium parameters in the current URL");
             }
         });
+    } else {
+        console.error("#apply-btn button not found.");
     }
-
+    function updateURLWithUTMParams(url, source, medium) {
+        const finalURL = new URL(url);
+        finalURL.searchParams.set('utm_source', encodeURIComponent(source));
+        finalURL.searchParams.set('utm_medium', encodeURIComponent(medium));
+        finalURL.searchParams.set('utm_campaign', 'your_campaign_value');
+        return finalURL.toString();
+    }
     function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
-    
-   
-switch (medium) {
-    case 'social':
-        iisValue = "Social Media";
-        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-        break;
-   case 'career':
-        iisValue = "Career fair";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'digital':
-        iisValue = "Digital Ad";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'mobile':
-        iisValue = "mobile stand";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'Career':
-        iisValue = "Career Fair";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'mobile':
-         iisValue = "Mobile Stand";
-         iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-    case 'poster':
-        iisValue = "Poster";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-         break;
-            case 'Social':
-        iisValue = "Social Media";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'flyers':
-        iisValue = "Flyers";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'physical':
-        iisValue = "Physical QR";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'FoTG':
-        iisValue = "FoTG";
-        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-        break;
-    case 'banner1':
-            iisValue = "banner1";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-    case 'banner2':
-            iisValue = "banner2";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-            case 'email':
-                        iisValue = "Email Blast";
-                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                        break;  
-   
-    default:
-        console.error("Unknown utm_medium");
-        return baseURL;
-}
-    
-        finalURL.searchParams.set('mode', 'job'); // Adding 'mode=job' parameter
+
+        switch (medium) {
+            case 'social':
+                iisValue = "Social Media";
+                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+                break;
+           case 'Career':
+                iisValue = "Career fair";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Digital':
+                iisValue = "Digital Ad";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'mobile':
+                iisValue = "mobile stand";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Career':
+                iisValue = "Career Fair";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Mobile':
+                 iisValue = "Mobile Stand";
+                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+            case 'Poster':
+                iisValue = "Poster";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                 break;
+                    case 'Social':
+                iisValue = "Social Media";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Flyers':
+                iisValue = "Flyers";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Physical':
+                iisValue = "Physical QR";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'FoTG':
+                iisValue = "FoTG";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner1':
+                    iisValue = "banner1";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+            case 'banner2':
+                    iisValue = "banner2";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+                    case 'Email':
+                                iisValue = "Email Blast";
+                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                                break;  
+          
+            default:
+                console.error("Unknown utm_medium");
+                return baseURL;
+        }
+
+        finalURL.searchParams.set('mode', 'job');
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
         finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
-    
-        return decodeURIComponent(finalURL.toString()); // Decoding the final URL before returning
+
+        return decodeURIComponent(finalURL.toString());
     }
-    
 });
 
-
-
+//Handling Click Events for Share Buttons
 
 // Event listeners for share buttons
 document.getElementById("share-button-whatsapp").addEventListener("click", function() {
@@ -393,6 +533,9 @@ document.getElementById("share-button-IG").addEventListener("click", function() 
     const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
     window.open(instagramLink, "_blank");
 });
-
  
- 
+$(document).ready(function() {
+    $('.mobile-menu-toggle').click(function() {
+        $('.mobile-menu').slideToggle();
+    });
+});
