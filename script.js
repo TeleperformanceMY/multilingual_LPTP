@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Elements to be translated
-    const elementsToTranslate = {
+     const elementsToTranslate = {
         '.intro-text h1': 'intro_text',
         '.hot-job p': 'hot_job_description',
         '.find-job p': 'team_response',
@@ -90,11 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'header ul li:nth-child(1) > a': 'about_us',
         'header ul li:nth-child(1) ul li:nth-child(1) > a': 'tp_malaysia',
         'header ul li:nth-child(1) ul li:nth-child(2) > a': 'tp_thailand',
-        'header ul li:nth-child(3) > a': 'careers',
+         '.careers': 'careers',
+
         'header ul li:nth-child(2) ul li:nth-child(1) > a': 'hot_job',
         'header ul li:nth-child(2) ul li:nth-child(2) > a': 'opportunities',
         'header ul li:nth-child(2) ul li:nth-child(3) > a': 'refer_friend',
-        'header ul li:nth-child(3) > a': 'stay_connected',
+        '.Stay': 'stay_connected',
         'header ul li:nth-child(3) ul li:nth-child(1) > a': 'tpmy_instagram',
         'header ul li:nth-child(3) ul li:nth-child(2) > a': 'tpth_instagram',
         'header ul li:nth-child(3) ul li:nth-child(3) > a': 'tpmy_facebook',
