@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
 
-        switch (medium) {
+     switch (medium) {
             case 'social':
                 iisValue = "Social Media";
                 iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Career fair";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-            case 'Digital':
+            case 'digital':
                 iisValue = "Digital Ad";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "mobile stand";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-            case 'Career':
+            case 'career':
                 iisValue = "Career Fair";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  iisValue = "Mobile Stand";
                  iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
-            case 'Poster':
+            case 'poster':
                 iisValue = "Poster";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                  break;
@@ -490,11 +490,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Social Media";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-            case 'Flyers':
+            case 'flyers':
                 iisValue = "Flyers";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-            case 'Physical':
+            case 'physical':
                 iisValue = "Physical QR";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
