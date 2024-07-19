@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             about_us: "About Us",
             careers: "Careers",
-            hot_job: "🔥 Hot Job 🔥",
-            opportunities: "🌟 Opportunities 🌟",
+            hot_job: " Hot Job 🔥",
+            opportunities: "Job Opportunities 🌟",
             refer_friend: "Refer A Friend",
             stay_connected: "Stay Connected",
             contact_us: "Contact Us",
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         zh: {
             about_us: "关于我们",
             careers: "职业机会",
-            hot_job: "🔥 热门职位 🔥",
-            opportunities: "🌟 机会 🌟",
+            hot_job: " 热门职位 🔥",
+            opportunities: " 机会 🌟",
             refer_friend: "介绍个朋友",
             stay_connected: "保持联系",
             contact_us: "联系我们",
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         jp: {
             about_us: "会社概要",
             careers: "採用情報",
-            hot_job: "🔥 ホットジョブ 🔥",
-            opportunities: "🌟 採用情報 🌟",
+            hot_job: "ホットジョブ 🔥",
+            opportunities: " 採用情報 🌟",
             refer_friend: "友達紹介",
             stay_connected: "つながりを続ける  ",
             contact_us: "お問い合わせ",
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'header ul li:nth-child(1) ul li:nth-child(1) > a': 'tp_malaysia',
         'header ul li:nth-child(1) ul li:nth-child(2) > a': 'tp_thailand',
          '.careers': 'careers',
+
 
         'header ul li:nth-child(2) ul li:nth-child(1) > a': 'hot_job',
         'header ul li:nth-child(2) ul li:nth-child(2) > a': 'opportunities',
