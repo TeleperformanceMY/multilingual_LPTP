@@ -21,34 +21,35 @@
         </div>
 
         <nav>
-            <ul>
-                <li>
-                    <a href="#">About Us</a>
+            <button class="menu-toggle">☰</button>
+
+<!-- Menu Wrapper for Mobile View -->
+<div class="menu-wrapper">
+            <!-- Desktop menu -->
+            <ul class="desktop-menu">
+                <!-- Existing individual items -->
+                <li><a href="#">About Us</a>
                     <ul class="dropdown">
                         <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
                         <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#" class="careers">Careers</a>
+                <li><a href="#" class="careers">Careers</a>
                     <ul class="dropdown">
-                        <li><a href="#">Hot Job 🔥</a></li>
-                        <li><a class="RAF" href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                        <li><a href="#" id="hot-job">Hot Job 🔥</a></li>
+                        <li><a href="oppor.html">Job Opportunities 🌟</a></li>
+                        <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#" class="Stay">Stay Connected</a>
+                <li><a href="#" class="stay">Stay Connected</a>
                     <ul class="dropdown">
-                        <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
-                        <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
-                        <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
-                        <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
-
-                    
+                        <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
+                        <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
+                        <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
+                        <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
                     </ul>
                 </li>
-                
-                <li><a href="#" class="contact-us">Contact Us</a></li>
+                <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
                 <li class="language-dropdown">
                     <a href="#">Language</a>
                     <ul class="dropdown">
@@ -56,52 +57,11 @@
                         <li><a href="#" data-lang="zh">Mandarin</a></li>
                         <li><a href="#" data-lang="jp">Japanese</a></li>
                     </ul>
-              
                 </li>
-                <div class="mobile-menu">
-                    <button class="mobile-menu-button">☰</button>
-                    <ul class="mobile-dropdown">
-                        <li>
-                            <a href="#">About Us</a>
-                            <ul class="mobile-submenu">
-                                <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
-                                <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Careers</a>
-                            <ul class="mobile-submenu">
-                                <li><a href="#" id="hot-job">Hot Job 🔥</a></li>
-                                <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Stay Connected</a>
-                            <ul class="mobile-submenu">
-                                <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
-                                <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="output-onlinepngtools (4).png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
-                                <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
-                                <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="output-onlinepngtools (3).png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
-                        <li class="language-dropdown">
-                            <a href="#">Language</a>
-                            <ul class="dropdown">
-                                <li><a href="#" data-lang="en">English</a></li>
-                                <li><a href="#" data-lang="zh">Mandarin</a></li>
-                                <li><a href="#" data-lang="jp">Japanese</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                
-                
-        </nav>
+           
         
-        <button class="mobile-menu-button">&#9776;</button>
-
+              
+        </nav>
     </header>
     <main>
         <section class="intro">
@@ -160,6 +120,24 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the menu wrapper and toggle button
+            var menuWrapper = document.querySelector('.menu-wrapper');
+            var menuToggle = document.querySelector('.menu-toggle');
+            
+            // Toggle menu visibility on button click
+            menuToggle.addEventListener('click', function () {
+                menuWrapper.classList.toggle('open');
+            });
+            
+            // Optional: Close menu if clicking outside
+            document.addEventListener('click', function (e) {
+                if (!menuWrapper.contains(e.target) && !menuToggle.contains(e.target)) {
+                    menuWrapper.classList.remove('open');
+                }
+            });
+        });
+    </script>
  </body>
 </html>
