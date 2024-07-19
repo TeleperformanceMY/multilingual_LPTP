@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
             intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
             intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            share_via: "share viia"
+            share_via: "share via"
 
 
         },
@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '.language-dropdown ul li:nth-child(3) > a': 'japanese',
         '.share-buttons h2': 'share_via',
         '.hot-job h2': 'hot_job_content',
-        '.apply-btn': 'apply_now'
+        '.apply-btn': 'apply_now',
+        '.container h1' : 'intro_text2'
     };
     
     
