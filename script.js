@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             about_us: "About Us",
             careers: "Careers",
-            hot_job: " Hot Job 🔥",
+            hot_job: "Hot Job 🔥",
             opportunities: "Job Opportunities 🌟",
             refer_friend: "Refer A Friend",
             stay_connected: "Stay Connected",
@@ -13,28 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
             hot_job_description: "Check out our <strong>“Hot Job of the Week”</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!",
             apply_now: "Apply Now!",
             find_job: "Find your perfect job!",
-            choose_language: "language",
+            choose_language: "Choose your language",
             choose_location: "Choose your location",
             choose_job_type: "Choose your job type",
             generate_qr: "Generate QR Code & Apply Now!",
             intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
             team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            intro_text1: "                Find your perfect <span class='highlight'>Job!</span>",
+            intro_text1: "Find your perfect <span class='highlight'>Job!</span>",
             intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            share_via: "share via"
-
-
+            share_via: "Share via",
+            preferred_language: "Preferred Language",
         },
         zh: {
             about_us: "关于我们",
             careers: "职业机会",
-            hot_job: " 热门职位 🔥",
-            opportunities: " 机会 🌟",
+            hot_job: "热门职位 🔥",
+            opportunities: "机会 🌟",
             refer_friend: "介绍个朋友",
             stay_connected: "保持联系",
             contact_us: "联系我们",
             language: '语言',
-
             hot_job_content: "本周热门职位!",
             hot_job_description: "查看我们的<strong>“本周热门职位”</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
             apply_now: "立即申请！",
@@ -45,40 +43,38 @@ document.addEventListener('DOMContentLoaded', () => {
             generate_qr: "生成二维码并立即申请！",
             intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
             team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
-            intro_text1: "      找到你的完美 <span class='highlight'>工作！</span>",
+            intro_text1: "找到你的完美 <span class='highlight'>工作！</span>",
             intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
-            share_via: "分享"
-
-
+            share_via: "分享",
+            preferred_language: "首选语言",
         },
         jp: {
             about_us: "会社概要",
             careers: "採用情報",
             hot_job: "ホットジョブ 🔥",
-            opportunities: " 採用情報 🌟",
+            opportunities: "採用情報 🌟",
             refer_friend: "友達紹介",
-            stay_connected: "つながりを続ける  ",
+            stay_connected: "つながりを続ける",
             contact_us: "お問い合わせ",
             language: '言語',
-
             hot_job_content: "今週の注目のお仕事!",
-            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
             apply_now: "今すぐ応募!",
             find_job: "理想の仕事を見つける!",
             choose_language: "勤務地を選択",
             choose_location: "あなたの場所を選択してください",
             choose_job_type: "職種を選ぶ",
             generate_qr: "QRコードを作成し、今すぐご応募ください！",
-            intro_text: "私たちは<span class='highlight'>誰 か</span>を探していま",
+            intro_text: "私たちは<span class='highlight'>誰か</span>を探しています",
             team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
-            intro_text1: " 理想の<span class='highlight'>お仕事</span>を見つけましょう！",
-            intro_text2:  "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
-            share_via: "share via"
+            intro_text1: "理想の<span class='highlight'>お仕事</span>を見つけましょう！",
+            intro_text2: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            share_via: "共有",
+            preferred_language: "首選言語",
         }
     };
 
-    // Elements to be translated
-     const elementsToTranslate = {
+    const elementsToTranslate = {
         '.intro-text h1': 'intro_text',
         '.hot-job p': 'hot_job_description',
         '.find-job p': 'team_response',
@@ -90,9 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'header ul li:nth-child(1) > a': 'about_us',
         'header ul li:nth-child(1) ul li:nth-child(1) > a': 'tp_malaysia',
         'header ul li:nth-child(1) ul li:nth-child(2) > a': 'tp_thailand',
-         '.careers': 'careers',
-
-
+        '.careers': 'careers',
         'header ul li:nth-child(2) ul li:nth-child(1) > a': 'hot_job',
         'header ul li:nth-child(2) ul li:nth-child(2) > a': 'opportunities',
         'header ul li:nth-child(2) ul li:nth-child(3) > a': 'refer_friend',
@@ -109,15 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
         '.share-buttons h2': 'share_via',
         '.hot-job h2': 'hot_job_content',
         '.apply-btn': 'apply_now',
-        '.container h1' : 'intro_text2'
+        '.container h1': 'intro_text2',
+        '.lang label': 'preferred_language',
+        '.loc label': 'choose_location',
+        '.jobt label': 'choose_job_type',
+        '.RAF': 'refer_friend'
     };
-    
-    
+
     const dropdown = document.querySelector('.language-dropdown');
     const selectDropdown = document.getElementById('languages');
+    const languageSelect = document.getElementById('language-select');
+    const locationSelect = document.getElementById('location-select');
+    const jobTypeSelect = document.getElementById('job-type-select');
     const urlParams = new URLSearchParams(window.location.search);
 
-    // Function to update content based on selected language
     function updateContent(language) {
         const langContent = languages[language];
         if (langContent) {
@@ -125,13 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const key = elementsToTranslate[selector];
                 const element = document.querySelector(selector);
                 if (element && langContent[key]) {
-                    element.innerHTML = langContent[key]; // Use innerHTML to render HTML content
+                    element.innerHTML = langContent[key];
                 }
             });
+
+            languageSelect.querySelector('option[disabled]').textContent = langContent.choose_language;
+            locationSelect.querySelector('option[disabled]').textContent = langContent.choose_location;
+            jobTypeSelect.querySelector('option[disabled]').textContent = langContent.choose_job_type;
         }
     }
 
-    // Event listener for language selection in dropdown menu
+    function updateURLParameter(param, value) {
+        urlParams.set(param, value);
+        const newURL = `${window.location.pathname}?${urlParams.toString()}`;
+        window.history.replaceState(null, '', newURL);
+    }
+
     dropdown.addEventListener('click', (event) => {
         event.preventDefault();
         if (event.target.tagName === 'A') {
@@ -141,24 +149,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener for language selection in select#languages dropdown
     selectDropdown.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
         updateContent(selectedLanguage);
         updateURLParameter('lang', selectedLanguage);
     });
 
-    // Function to update URL parameter
-    function updateURLParameter(param, value) {
-        urlParams.set(param, value);
-        const newURL = `${window.location.pathname}?${urlParams.toString()}`; // Corrected quotation marks
-        window.history.replaceState(null, '', newURL);
+    const selectedLanguage = urlParams.get('lang') || 'en';
+    updateContent(selectedLanguage);
+    selectDropdown.value = selectedLanguage;
+
+    function populateDropdowns() {
+        const locations = ['Location 1', 'Location 2', 'Location 3'];
+        const jobTypes = ['Job Type 1', 'Job Type 2', 'Job Type 3'];
+
+        locations.forEach(location => {
+            const option = document.createElement('option');
+            option.value = location;
+            option.textContent = location;
+            locationSelect.appendChild(option);
+        });
+
+        jobTypes.forEach(jobType => {
+            const option = document.createElement('option');
+            option.value = jobType;
+            option.textContent = jobType;
+            jobTypeSelect.appendChild(option);
+        });
     }
 
-    // Initial setup based on URL parameter or default language
-    const langParam = urlParams.get('lang') || 'en';
-    updateContent(langParam);
+    populateDropdowns();
 });
+
 
 
 
