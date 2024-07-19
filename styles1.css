@@ -557,3 +557,125 @@ footer {
             display: none; /* Hide modal in desktop view */
         }
     }
+
+
+    
+/* Default styles for desktop view */
+nav .desktop-menu {
+    display: flex; /* Use flexbox for horizontal layout on desktop */
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Hide the menu button and wrapper by default */
+.menu-toggle {
+    display: none; /* Hide menu toggle button by default */
+}
+
+/* Hide all menu items except Language on mobile */
+@media (max-width: 768px) {
+ 
+  /* Ensure the menu items are displayed vertically on mobile */
+/* Ensure the menu items are displayed vertically on mobile */
+/* Ensure the menu items are displayed vertically on mobile */
+
+
+/* Ensure the menu items are displayed vertically on mobile */
+@media (max-width: 768px) {
+    .menu-wrapper {
+        display: block; /* Ensure the menu wrapper is visible */
+        position: fixed; /* Fixed position for the menu */
+        top: 0; /* Align with the top of the screen */
+        left: -100%; /* Hide off-screen initially */
+        width: 250px; /* Set width for the vertical menu */
+        height: 100%; /* Full height of the screen */
+        background-color: white; /* Background color */
+        border-right: 1px solid #ddd; /* Border on the right side */
+        transition: left 0.3s ease; /* Smooth transition */
+        z-index: 1000; /* Above other content */
+        overflow-y: auto; /* Enable vertical scrolling if needed */
+    }
+
+    /* Show the menu when toggled */
+    .menu-wrapper.open {
+        left: 0; /* Move into view */
+    }
+
+    /* Style the menu list as a vertical column */
+    .menu-wrapper .desktop-menu {
+        display: block; /* Ensure the list is displayed as a block */
+        list-style: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    /* Style individual menu items */
+    .menu-wrapper .desktop-menu > li {
+        padding: 15px 20px; /* Add padding for each item */
+        border-bottom: 1px solid #ddd; /* Border between items */
+        background-color: #f9f9f9; /* Light background color for items */
+        display: block; /* Ensure each item is a block-level element */
+        text-align: left; /* Align text to the left */
+        box-sizing: border-box; /* Include padding and border in width and height */
+        margin-bottom: 10px; /* Add space between items */
+        position: relative; /* Position relative for dropdown positioning */
+    }
+
+    .menu-wrapper .desktop-menu > li > a {
+        text-decoration: none; /* Remove underline from links */
+        color: #333; /* Text color */
+        display: block; /* Full width clickable area */
+        line-height: 1.5; /* Adjust line height for better spacing */
+    }
+
+    /* Hide dropdowns except for the language dropdown */
+    .menu-wrapper .desktop-menu .dropdown {
+        display: none; /* Hide the dropdown menus by default */
+        list-style: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    /* Show the language dropdown by default */
+    .menu-wrapper .desktop-menu .language-dropdown .dropdown {
+        display: block; /* Show the language dropdown */
+    }
+
+    /* Style dropdown items */
+    .menu-wrapper .desktop-menu .dropdown li {
+        padding: 15px 20px; /* Add padding for each dropdown item */
+        border-bottom: 1px solid #ddd; /* Border between items */
+        background-color: #fff; /* Background color for dropdown items */
+        display: block; /* Ensure each dropdown item is a block-level element */
+        margin-bottom: 10px; /* Add space between dropdown items */
+        box-sizing: border-box; /* Include padding and border in width and height */
+    }
+
+    .menu-wrapper .desktop-menu .dropdown li a {
+        text-decoration: none; /* Remove underline from links */
+        color: #333; /* Text color */
+        display: block; /* Full width clickable area */
+        line-height: 1.5; /* Adjust line height for better spacing */
+    }
+
+    /* Ensure dropdowns open below each item */
+    .menu-wrapper .desktop-menu > li:hover .dropdown,
+    .menu-wrapper .desktop-menu > li.active .dropdown {
+        display: block; /* Show dropdown when its parent is hovered or active */
+    }
+}
+
+
+
+/* Show the menu button on mobile */
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on mobile */
+        position: fixed; /* Fix it to the top right corner */
+        top: 10px; /* Position it from the top */
+        right: 10px; /* Position it from the right */
+        z-index: 1001; /* Ensure it's above other content */
+    }
+}
+
+
