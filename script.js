@@ -191,51 +191,68 @@ function generateFinalURL(baseURL, source, medium) {
     let finalURL = new URL(baseURL);
     let iisValue, iisnValue;
 
-    switch (medium) {
-        case 'social':
-            iisValue = "Social Media";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'career':
-            iisValue = "Career Fair";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'digital':
-            iisValue = "Digital Ad";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'mobile':
-            iisValue = "Mobile Stand";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'poster':
-            iisValue = "Poster";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'email':
-            iisValue = "Email Blast";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'physical':
-            iisValue = "Physical QR";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'banner1':
-            iisValue = "Banner 1";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'banner2':
-            iisValue = "Banner 2";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        case 'fotg':
-            iisValue = "FoTG";
-            iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-            break;
-        default:
-            console.error("Unknown medium");
-            return baseURL; // Return base URL if medium is not recognized
-    }
+ switch (medium) {
+            case 'social':
+                iisValue = "Social Media";
+                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
+                break;
+           case 'Career':
+                iisValue = "Career fair";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'digital':
+                iisValue = "Digital Ad";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'mobile':
+                iisValue = "mobile stand";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'career':
+                iisValue = "Career Fair";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Mobile':
+                 iisValue = "Mobile Stand";
+                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+            case 'poster':
+                iisValue = "Poster";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                 break;
+                    case 'Social':
+                iisValue = "Social Media";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'flyers':
+                iisValue = "Flyers";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'physical':
+                iisValue = "Physical QR";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'FoTG':
+                iisValue = "FoTG";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'banner1':
+                    iisValue = "banner1";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+            case 'banner2':
+                    iisValue = "banner2";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+                    case 'Email':
+                                iisValue = "Email Blast";
+                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                                break;  
+          
+            default:
+                console.error("Unknown utm_medium");
+                return baseURL;
+        }
   // Replace "utm_source=" and "utm_medium=" in source and medium
   source = source.replace('utm_source=', '');
   medium = medium.replace('utm_medium=', '');
