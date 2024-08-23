@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//Handling Click Event on Apply Button
+// Handling Click Event on Apply Button
 
 document.addEventListener('DOMContentLoaded', () => {
     const customLink = document.getElementById('apply-btn');
@@ -452,17 +452,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const utmSource = url.searchParams.get('utm_source');
             const utmMedium = url.searchParams.get('utm_medium');
 
+            let finalUrl;
+
             if (utmSource && utmMedium) {
-                const finalUrl = generateFinalURL(originalUrl, utmSource, utmMedium);
-                customLink.setAttribute('href', finalUrl); // Update the href attribute
-                window.open(finalUrl, '_blank'); // Open the modified URL in a new tab
+                finalUrl = generateFinalURL(originalUrl, utmSource, utmMedium);
             } else {
-                console.error("Missing utm_source or utm_medium parameters in the current URL");
+                console.log("Redirecting to the LINKTREE.");
+                finalUrl = "https://linktr.ee/teleperformancemy";
             }
+
+            customLink.setAttribute('href', finalUrl); // Update the href attribute
+            window.open(finalUrl, '_blank'); // Open the final URL in a new tab
         });
     } else {
         console.error("#apply-btn button not found.");
     }
+
     function updateURLWithUTMParams(url, source, medium) {
         const finalURL = new URL(url);
         finalURL.searchParams.set('utm_source', encodeURIComponent(source));
@@ -470,17 +475,20 @@ document.addEventListener('DOMContentLoaded', () => {
         finalURL.searchParams.set('utm_campaign', 'your_campaign_value');
         return finalURL.toString();
     }
+
     function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
 
-     switch (medium) {
+        switch (medium) {
             case 'social':
+            case 'Social':
                 iisValue = "Social Media";
                 iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
                 break;
-           case 'Career':
-                iisValue = "Career fair";
+            case 'Career':
+            case 'career':
+                iisValue = "Career Fair";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
             case 'digital':
@@ -488,23 +496,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
             case 'mobile':
-                iisValue = "mobile stand";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
-            case 'career':
-                iisValue = "Career Fair";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                break;
             case 'Mobile':
-                 iisValue = "Mobile Stand";
-                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
+                iisValue = "Mobile Stand";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
             case 'poster':
                 iisValue = "Poster";
-                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                 break;
-                    case 'Social':
-                iisValue = "Social Media";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
             case 'flyers':
@@ -520,18 +517,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
             case 'banner1':
-                    iisValue = "banner1";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
+                iisValue = "Banner 1";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
             case 'banner2':
-                    iisValue = "banner2";
-                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                    break;
-                    case 'Email':
-                                iisValue = "Email Blast";
-                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                                break;  
-          
+                iisValue = "Banner 2";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
+            case 'Email':
+                iisValue = "Email Blast";
+                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
@@ -544,6 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return decodeURIComponent(finalURL.toString());
     }
 });
+
 
 //Handling Click Events for Share Buttons
 
