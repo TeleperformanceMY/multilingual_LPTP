@@ -248,7 +248,10 @@ function generateFinalURL(baseURL, source, medium) {
                                 iisValue = "Email Blast";
                                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
-          
+           case 'Sentral':
+                                iisValue = "Sentral College Penang";
+                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                                break;  
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
@@ -528,6 +531,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Email Blast";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
+                       case 'Sentral':
+                                iisValue = "Sentral College Penang";
+                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                                break;  
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
