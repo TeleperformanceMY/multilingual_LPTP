@@ -248,8 +248,8 @@ function generateFinalURL(baseURL, source, medium) {
                                 iisValue = "Email Blast";
                                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
-           case 'Sentral':
-                                iisValue = "Sentral College Penang";
+           case 'MOU':
+                                iisValue = "MOU";
                                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
             default:
@@ -531,8 +531,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Email Blast";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-                       case 'Sentral':
-                                iisValue = "Sentral College Penang";
+                       case 'MOU':
+                                iisValue = "MOU";
                                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
             default:
