@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
                 openQrModal(finalLink);
             } else {
-                alert('Evergreen link not found for the selected job.');
+                alert('Error! Please remember to select all options before you generate your QR code.');
             }
         });
     } else {
