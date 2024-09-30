@@ -248,10 +248,7 @@ function generateFinalURL(baseURL, source, medium) {
                                 iisValue = "Email Blast";
                                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
-           case 'MOU':
-                                iisValue = "MOU";
-                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                                break;  
+          
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
@@ -389,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//Fetching JSON Data and Populating Dropdowns
+// Fetching JSON Data and Populating Dropdowns
 document.addEventListener('DOMContentLoaded', () => {
     let jsonData = [];
     const languageDropdown = document.getElementById('language-select');
@@ -400,10 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            populateDropdown(languageDropdown, ['Select your language', ...getUniqueValues(data, 'Language')]);
-            populateDropdown(locationDropdown, ['Choose your location']);
-            populateDropdown(jobDropdown, ['Choose your job']);
             jsonData = data;
+            populateDropdown(languageDropdown, ['Select your language', ...getUniqueValues(data, 'Language')]);
+            populateDropdown(locationDropdown, ['Choose your location', ...getUniqueValues(data, 'Location')]);
+            populateDropdown(jobDropdown, ['Choose your job']); // Initially empty
         })
         .catch(error => console.error('Error loading JSON data:', error));
 
@@ -411,20 +408,72 @@ document.addEventListener('DOMContentLoaded', () => {
     languageDropdown.addEventListener('change', handleLanguageChange);
     locationDropdown.addEventListener('change', handleLocationChange);
 
+    // Handle language dropdown change
     function handleLanguageChange() {
         const selectedLanguage = languageDropdown.value;
-        const locations = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage), 'Location');
-        populateDropdown(locationDropdown, ['Choose your location', ...locations]);
+
+        // Filter locations based on the selected language
+        const filteredLocations = selectedLanguage
+            ? getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage), 'Location')
+            : getUniqueValues(jsonData, 'Location'); // Show all locations if no language selected
+        
+        // Update location dropdown but preserve the selected value if valid
+        updateDropdownWithSelectedValue(locationDropdown, ['Choose your location', ...filteredLocations], locationDropdown.value);
+        
+        // Reset the job dropdown
         populateDropdown(jobDropdown, ['Choose your job']);
+
+        // If both dropdowns are selected, update the jobs dropdown
+        updateJobsDropdown();
     }
 
+    // Handle location dropdown change
     function handleLocationChange() {
+        const selectedLocation = locationDropdown.value;
+
+        // Filter languages based on the selected location
+        const filteredLanguages = selectedLocation
+            ? getUniqueValues(jsonData.filter(item => item.Location === selectedLocation), 'Language')
+            : getUniqueValues(jsonData, 'Language'); // Show all languages if no location selected
+
+        // Update language dropdown but preserve the selected value if valid
+        updateDropdownWithSelectedValue(languageDropdown, ['Select your language', ...filteredLanguages], languageDropdown.value);
+
+        // Reset the job dropdown
+        populateDropdown(jobDropdown, ['Choose your job']);
+
+        // If both dropdowns are selected, update the jobs dropdown
+        updateJobsDropdown();
+    }
+
+    // Update the job dropdown based on both selected language and location
+    function updateJobsDropdown() {
         const selectedLanguage = languageDropdown.value;
         const selectedLocation = locationDropdown.value;
-        const jobs = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation), 'Positions');
-        populateDropdown(jobDropdown, ['Choose your job', ...jobs]);
+
+        if (selectedLanguage && selectedLocation) {
+            // Filter jobs based on selected language and location
+            const jobs = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation), 'Positions');
+            populateDropdown(jobDropdown, ['Choose your job', ...jobs]);
+        } else {
+            // Reset jobs dropdown if either dropdown is not selected
+            populateDropdown(jobDropdown, ['Choose your job']);
+        }
     }
 
+    // Function to populate a dropdown while keeping the selected value if valid
+    function updateDropdownWithSelectedValue(dropdown, options, currentValue) {
+        populateDropdown(dropdown, options);
+
+        // If the current value is still a valid option, reselect it
+        if (options.includes(currentValue)) {
+            dropdown.value = currentValue;
+        } else {
+            dropdown.value = ''; // Reset to default if the current value is no longer valid
+        }
+    }
+
+    // Function to populate a dropdown with options
     function populateDropdown(selectElement, options) {
         selectElement.innerHTML = '';
         options.forEach(option => {
@@ -435,10 +484,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to get unique values from JSON data
     function getUniqueValues(data, key) {
         return [...new Set(data.map(item => item[key]))];
     }
 });
+
 
 // Handling Click Event on Apply Button
 
@@ -531,10 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Email Blast";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
-                       case 'MOU':
-                                iisValue = "MOU";
-                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
-                                break;  
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
