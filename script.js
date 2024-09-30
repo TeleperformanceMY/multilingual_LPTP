@@ -391,7 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 });
-
 // Fetching JSON Data and Populating Dropdowns
 document.addEventListener('DOMContentLoaded', () => {
     let jsonData = [];
@@ -457,10 +456,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLanguage = languageDropdown.value;
         const selectedLocation = locationDropdown.value;
 
+        if (selectedLanguage === 'Show All' || selectedLocation === 'Show All') {
+            // Reset job dropdown if either is set to "Show All"
+            populateDropdown(jobDropdown, ['Choose your job']);
+            return;
+        }
+
         if (selectedLanguage && selectedLocation) {
             const jobs = getUniqueValues(jsonData.filter(item => {
-                const languageMatch = selectedLanguage === 'Show All' || item.Language === selectedLanguage;
-                const locationMatch = selectedLocation === 'Show All' || item.Location === selectedLocation;
+                const languageMatch = item.Language === selectedLanguage;
+                const locationMatch = item.Location === selectedLocation;
                 return languageMatch && locationMatch;
             }), 'Positions');
 
@@ -499,6 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return [...new Set(data.map(item => item[key]))];
     }
 });
+
 
 
 // Handling Click Event on Apply Button
