@@ -244,10 +244,16 @@ function generateFinalURL(baseURL, source, medium) {
                     iisValue = "banner2";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
-                    case 'Email':
-                                iisValue = "Email Blast";
-                                iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+              case 'Email':
+                      iisValue = "Email Blast";
+                      iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                                 break;  
+              case 'public':
+                    iisValue = "Public Stands";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+              
+          
           
             default:
                 console.error("Unknown utm_medium");
@@ -586,6 +592,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 iisValue = "Email Blast";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                 break;
+                case 'public':
+                    iisValue = "Public Stands";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
