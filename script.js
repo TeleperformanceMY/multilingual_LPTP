@@ -398,8 +398,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             jsonData = data;
-            populateDropdown(languageDropdown, ['Select your language', ...getUniqueValues(data, 'Language')]);
-            populateDropdown(locationDropdown, ['Choose your location', ...getUniqueValues(data, 'Location')]);
+            populateDropdown(languageDropdown, ['Select your language', 'Show All', ...getUniqueValues(data, 'Language')]);
+            populateDropdown(locationDropdown, ['Choose your location', 'Show All', ...getUniqueValues(data, 'Location')]);
             populateDropdown(jobDropdown, ['Choose your job']); // Initially empty
         })
         .catch(error => console.error('Error loading JSON data:', error));
@@ -412,18 +412,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleLanguageChange() {
         const selectedLanguage = languageDropdown.value;
 
-        // Filter locations based on the selected language
-        const filteredLocations = selectedLanguage
-            ? getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage), 'Location')
-            : getUniqueValues(jsonData, 'Location'); // Show all locations if no language selected
-        
-        // Update location dropdown but preserve the selected value if valid
-        updateDropdownWithSelectedValue(locationDropdown, ['Choose your location', ...filteredLocations], locationDropdown.value);
-        
+        // If "Show All" is selected, keep all locations
+        const filteredLocations = selectedLanguage === 'Show All'
+            ? getUniqueValues(jsonData, 'Location')
+            : getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage), 'Location');
+
+        // Update location dropdown
+        updateDropdownWithSelectedValue(locationDropdown, ['Choose your location', 'Show All', ...filteredLocations], locationDropdown.value);
+
         // Reset the job dropdown
         populateDropdown(jobDropdown, ['Choose your job']);
 
-        // If both dropdowns are selected, update the jobs dropdown
+        // Update jobs dropdown based on current selections
         updateJobsDropdown();
     }
 
@@ -431,18 +431,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleLocationChange() {
         const selectedLocation = locationDropdown.value;
 
-        // Filter languages based on the selected location
-        const filteredLanguages = selectedLocation
-            ? getUniqueValues(jsonData.filter(item => item.Location === selectedLocation), 'Language')
-            : getUniqueValues(jsonData, 'Language'); // Show all languages if no location selected
+        // If "Show All" is selected, keep all languages
+        const filteredLanguages = selectedLocation === 'Show All'
+            ? getUniqueValues(jsonData, 'Language')
+            : getUniqueValues(jsonData.filter(item => item.Location === selectedLocation), 'Language');
 
-        // Update language dropdown but preserve the selected value if valid
-        updateDropdownWithSelectedValue(languageDropdown, ['Select your language', ...filteredLanguages], languageDropdown.value);
+        // Update language dropdown
+        updateDropdownWithSelectedValue(languageDropdown, ['Select your language', 'Show All', ...filteredLanguages], languageDropdown.value);
 
         // Reset the job dropdown
         populateDropdown(jobDropdown, ['Choose your job']);
 
-        // If both dropdowns are selected, update the jobs dropdown
+        // Update jobs dropdown based on current selections
         updateJobsDropdown();
     }
 
@@ -452,8 +452,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedLocation = locationDropdown.value;
 
         if (selectedLanguage && selectedLocation) {
-            // Filter jobs based on selected language and location
-            const jobs = getUniqueValues(jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation), 'Positions');
+            const jobs = getUniqueValues(jsonData.filter(item => {
+                const languageMatch = selectedLanguage === 'Show All' || item.Language === selectedLanguage;
+                const locationMatch = selectedLocation === 'Show All' || item.Location === selectedLocation;
+                return languageMatch && locationMatch;
+            }), 'Positions');
+
             populateDropdown(jobDropdown, ['Choose your job', ...jobs]);
         } else {
             // Reset jobs dropdown if either dropdown is not selected
