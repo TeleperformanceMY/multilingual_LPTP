@@ -1,14 +1,23 @@
 /* styles.css */
 
+/* Define commonly used colors */
+:root {
+    --primary-color: #ff0082;
+    --secondary-color: #7A2180;
+    --tertiary-color: #E40276;
+    --text-color: #333;
+    --light-text-color: #555;
+    --bg-color: rgba(255, 255, 255, 0.9);
+}
+
 /* Reset and general styles */
 body {
-    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Sancola', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: var(--text-color);
     background: url('GMT_TP_Wave_Sep23_PurplePink2.png') repeat-y center top / 100% auto;
     animation: bugfix infinite 1s;
-    -webkit-animation: bugfix infinite 1s;
 }
 
 /* Header styles */
@@ -17,8 +26,8 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    box-shadow: none;
     padding: 10px 20px;
+    box-shadow: none;
 }
 
 .logo img {
@@ -34,61 +43,35 @@ nav ul {
 }
 
 nav ul li {
-    position: relative;
     margin: 0 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     font-weight: bold;
     padding: 10px;
     position: relative;
 }
-.logo-icon {
-    width: 20px; /* Adjust the width as per your design */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Optional: Adjust spacing between logo and text */
-    vertical-align: middle; /* Align the logo vertically with the text */
-}
 
-/* Arrow styles */
-nav ul li a::after
-  {
+nav ul li a::after,
+nav ul li a::before {
     content: '';
     position: absolute;
-    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
+    top: calc(50% + 3px);
     right: 0;
-    transform: translateY(-50%);
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid transparent; /* Default arrow color */
-    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
-}
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: calc(50% + 3px); /* Adjust vertical position to center vertically */
-    right: 0;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #ff0082; /* Default arrow color */
-    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Smooth transition */
-}
-
-nav ul li a::before {
-    top: 50%;
+    border-top: 5px solid var(--primary-color);
+    transition: transform 0.3s ease, border-top-color 0.3s ease;
 }
 
 nav ul li a:hover::after,
 nav ul li a:hover::before {
-    border-top-color: #ff0082; /* Hover arrow color */
-    transform: translateY(-50%) rotate(180deg); /* Rotate arrow */
+    border-top-color: var(--primary-color);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 nav ul li .dropdown {
@@ -97,7 +80,6 @@ nav ul li .dropdown {
     top: 100%;
     left: 0;
     background-color: whitesmoke;
-    box-shadow: none;
     z-index: 10;
 }
 
@@ -110,24 +92,11 @@ nav ul li .dropdown li {
     padding: 0;
 }
 
-nav ul li .dropdown li a {
-    padding: 10px 20px;
-    display: block;
-    color: #333;
-    font-weight: normal; /* Normal font weight for dropdown items */
-    white-space: nowrap; /* Ensures text is in one line */
-}
-
-nav ul li .dropdown li a:hover {
-    background-color: transparent;
-}
-
 .contact-us {
     color: #fff;
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    background: linear-gradient(0deg, var(--secondary-color) 16.67%, var(--tertiary-color) 95.31%);
     border-radius: 5px;
 }
-
 
 /* Intro section styles */
 .intro {
@@ -135,37 +104,28 @@ nav ul li .dropdown li a:hover {
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
-    background-color: transparent;
     flex-wrap: wrap;
 }
 
-.intro-text {
-    flex: 1;
-    padding: 0px;
-    background-color: transparent;
-}
-
 .intro-text h1 {
-    font-size: 70px; /* Increase the size */
+    font-size: 70px;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
 }
 
 .intro-text .highlight {
-    font-size: 100px; /* Increase the size more for the highlight */
-    color: #ff0082;
-    background: #ff0082 ;
+    font-size: 100px;
+    color: var(--primary-color);
+    background: var(--primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
 }
 
 .intro-video {
     flex: 2;
     max-width: 66%;
-    border: 10px solid #FF0082;
+    border: 10px solid var(--primary-color);
     border-radius: 10px;
-    background-color: transparent;
 }
 
 /* Job section styles */
@@ -173,7 +133,7 @@ nav ul li .dropdown li a:hover {
     position: relative;
     display: flex;
     padding: 20px;
-    background-color: rgba(255,255,255,0.9);
+    background-color: var(--bg-color);
     flex-wrap: wrap;
 }
 
@@ -188,440 +148,96 @@ nav ul li .dropdown li a:hover {
     opacity: 0.3;
     z-index: -1;
 }
-.container {
-    display: flex;
-    align-items: center; /* Align items vertically centered */
-}
 
-.generate-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px; /* Space between button and h1 */
-}
-
-.hot-job {
-    flex: 1;
+.hot-job, .find-job {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    background-color: transparent;
     border-radius: 10px;
-    width: 33%;
-}
-
-.find-job {
-    flex: 2;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    background-color: transparent;
-    border-radius: 10px;
-    width: 66%;
 }
 
 .hot-job h2, .find-job h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.hot-job h1, .find-job h1 {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
 .hot-job p, .find-job p {
-    color: #555;
-    margin-bottom: 20px;
+    color: var(--light-text-color);
 }
 
-.highlighted-word {
-    color: #ff0082;
-    font-weight: bold;
-}
-
-.dropdowns {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.dropdowns label {
-    margin-bottom: 10px;
-    color: #555;
-    font-weight: bold;
-}
-
-.dropdowns select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.apply-btn {
+.apply-btn, .generate-btn {
     display: inline-block;
     padding: 10px 20px;
-    border: none;
     color: white;
-    cursor: pointer;
     font-size: 16px;
     width: 100%;
-}
-
-.generate-btn {
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
-}
-
-.apply-btn {
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    cursor: pointer;
+    background: linear-gradient(0deg, var(--secondary-color) 16.67%, var(--tertiary-color) 95.31%);
 }
 
 .apply-btn:hover, .generate-btn:hover {
-    background: linear-gradient(45deg, #ff6b6b, #ff0082);
+    background: linear-gradient(45deg, #ff6b6b, var(--primary-color));
 }
-/* Modal Styles *//* Desktop view (default) */
+
 /* Modal Styles */
-/* Desktop view (default) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scrolling if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto; /* 10% from the top and centered */
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 600px; /* Set max width for larger screens */
+    width: 80%;
+    max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left; /* Align text and elements to the left */
-    position: relative; /* For close button positioning */
 }
 
 .close {
     color: #aaa;
-    position: absolute; /* Position close button */
+    position: absolute;
     top: 10px;
     right: 20px;
     font-size: 28px;
-    font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#job-url {
-    color: #ff0082; /* Pink color for the link */
-    display: block; /* Display as block for better spacing */
-    margin: 10px 0; /* Margin for spacing */
-    font-size: 18px; /* Increase font size */
-    text-decoration: none; /* Remove underline */
-}
-
-#job-url:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-#qr-code {
-    display: block;
-    margin: 20px auto; /* Center the QR code */
-}
-
-.message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999; /* Ensure it's above modal */
-}
-
-.share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center; /* Align items vertically */
-    gap: 15px; /* Increased gap between buttons */
-    justify-content: center; /* Center-align buttons horizontally */
-    background-color: transparent; /* Pink background color */
-
-}
-
-.share-buttons h2 {
-    flex: 0 0 auto; /* Don't grow, don't shrink, stay auto */
-    margin-right: 10px; /* Space between "Share Via" and buttons */
-}
-
-.share-buttons button {
-    padding: 12px ; /* Slightly bigger padding */
-    font-size: 24px; /* Increased font size */
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-     text-align: center; /* Center-align text */
-}
-
-/* Share button logos */
-#share-button-whatsapp {
-    background-image: url('image (11)-Photoroom.png');
-    background-repeat: no-repeat;
-    background-size: 24px;
-
-}
-
-#share-button-line {
-    background-image: url('output-onlinepngtools-Photoroom.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-facebook {
-    background-image: url('fbpiink-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-IG {
-    background-image: url('igpinnk-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-TikTok {
-    background-image: url('tiktokpink-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-
-
-/* Footer styles */
-footer {
-    padding: 10px 20px;
-    text-align: center;
-    background-color: rgba(66, 66, 66, 0.9);
-    color: white;
-    position: relative; /* Position it normally within the flow */
-     margin-top: 50px; /* Space above the footer */
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-left, .footer-right {
-    margin: 0;
-}
-/* Default styles for desktop view */
-nav .desktop-menu {
-    display: flex; /* Use flexbox for horizontal layout on desktop */
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
-
-/* Hide the menu button and wrapper by default */
-.menu-toggle {
-    display: none; /* Hide menu toggle button by default */
-}
-
-/* Hide all menu items except Language on mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
- 
-  /* Ensure the menu items are displayed vertically on mobile */
-/* Ensure the menu items are displayed vertically on mobile */
-/* Ensure the menu items are displayed vertically on mobile */
-
-
-/* Ensure the menu items are displayed vertically on mobile */
-@media (max-width: 768px) {
-    .menu-wrapper {
-        display: block; /* Ensure the menu wrapper is visible */
-        position: fixed; /* Fixed position for the menu */
-        top: 0; /* Align with the top of the screen */
-        left: -100%; /* Hide off-screen initially */
-        width: 250px; /* Set width for the vertical menu */
-        height: 100%; /* Full height of the screen */
-        background-color: white; /* Background color */
-        border-right: 1px solid #ddd; /* Border on the right side */
-        transition: left 0.3s ease; /* Smooth transition */
-        z-index: 1000; /* Above other content */
-        overflow-y: auto; /* Enable vertical scrolling if needed */
-    }
-
-    /* Show the menu when toggled */
-    .menu-wrapper.open {
-        left: 0; /* Move into view */
-    }
-
-    /* Style the menu list as a vertical column */
-    .menu-wrapper .desktop-menu {
-        display: block; /* Ensure the list is displayed as a block */
-        list-style: none; /* Remove default list styling */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-    }
-
-    /* Style individual menu items */
-    .menu-wrapper .desktop-menu > li {
-        padding: 15px 20px; /* Add padding for each item */
-        border-bottom: 1px solid #ddd; /* Border between items */
-        background-color: #f9f9f9; /* Light background color for items */
-        display: block; /* Ensure each item is a block-level element */
-        text-align: left; /* Align text to the left */
-        box-sizing: border-box; /* Include padding and border in width and height */
-        margin-bottom: 10px; /* Add space between items */
-        position: relative; /* Position relative for dropdown positioning */
-    }
-
-    .menu-wrapper .desktop-menu > li > a {
-        text-decoration: none; /* Remove underline from links */
-        color: #333; /* Text color */
-        display: block; /* Full width clickable area */
-        line-height: 1.5; /* Adjust line height for better spacing */
-    }
-
-    /* Hide dropdowns except for the language dropdown */
-    .menu-wrapper .desktop-menu .dropdown {
-        display: none; /* Hide the dropdown menus by default */
-        list-style: none; /* Remove default list styling */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-    }
-
-    /* Show the language dropdown by default */
-    .menu-wrapper .desktop-menu .language-dropdown .dropdown {
-        display: block; /* Show the language dropdown */
-    }
-
-    /* Style dropdown items */
-    .menu-wrapper .desktop-menu .dropdown li {
-        padding: 15px 20px; /* Add padding for each dropdown item */
-        border-bottom: 1px solid #ddd; /* Border between items */
-        background-color: #fff; /* Background color for dropdown items */
-        display: block; /* Ensure each dropdown item is a block-level element */
-        margin-bottom: 10px; /* Add space between dropdown items */
-        box-sizing: border-box; /* Include padding and border in width and height */
-    }
-
-    .menu-wrapper .desktop-menu .dropdown li a {
-        text-decoration: none; /* Remove underline from links */
-        color: #333; /* Text color */
-        display: block; /* Full width clickable area */
-        line-height: 1.5; /* Adjust line height for better spacing */
-    }
-
-    /* Ensure dropdowns open below each item */
-    .menu-wrapper .desktop-menu > li:hover .dropdown,
-    .menu-wrapper .desktop-menu > li.active .dropdown {
-        display: block; /* Show dropdown when its parent is hovered or active */
-    }
-}
-
-
-/* Show the menu button on mobile */
-    .menu-toggle {
-        display: block; /* Show the menu toggle button on mobile */
-        position: fixed; /* Fix it to the top right corner */
-        top: 10px; /* Position it from the top */
-        right: 10px; /* Position it from the right */
-        z-index: 1001; /* Ensure it's above other content */
-    }
-}
-
-
-
-
-@media (max-width: 768px) {
- 
-
     .intro {
         flex-direction: column;
     }
 
-    .intro-video {
-        max-width: 100%;
+    .intro-text h1 {
+        font-size: 30px;
     }
 
-    .job-section {
-        flex-direction: column;
-    }
-
-   
-    .intro-text h1{
-        font-size: 30px; /* Adjust this size as needed */
-    }
-    .intro-text .highlight{
+    .intro-text .highlight {
         font-size: 50px;
     }
-   
-        .hot-job, .find-job {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-        }
-    
-        .hot-job h1, .find-job h1 {
-            font-size: 14px;
-        }
-    
-        .hot-job p, .find-job p {
-            font-size: 14px;
-        }
-    
-        .apply-btn, .generate-btn {
-            width: 100%;
-            padding: 15px;
-            font-size: 14px;
-        }
-    
-        .dropdowns label {
-            font-size: 14px;
-        }
-    
-        .dropdowns select {
-            font-size: 14px;
-            padding: 8px;
-        }
-  
-        /* Mobile view */
-        .modal {
-            display: block; /* Display modal in mobile view */
-        }
-    
-        .modal-content {
-            width: 90%; /* Increase width to 90% on smaller screens */
-            margin: 20% auto; /* Increase top margin for better positioning */
-            padding: 10px; /* Reduce padding for smaller screens */
-        }
-    
-        .close {
-            font-size: 24px; /* Reduce font size for smaller screens */
-            top: 5px; /* Adjust positioning */
-            right: 10px; /* Adjust positioning */
-        }
-    
-        #job-url {
-            font-size: 16px; /* Reduce font size for smaller screens */
-        }
+
+    .hot-job, .find-job {
+        width: 100%;
+        padding: 10px;
     }
 
+    .apply-btn, .generate-btn {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .close {
+        font-size: 24px;
+        top: 5px;
+        right: 10px;
+    }
+}
