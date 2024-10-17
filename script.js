@@ -192,10 +192,11 @@ function generateFinalURL(baseURL, source, medium) {
     let iisValue, iisnValue;
 
  switch (medium) {
-            case 'social':
-                iisValue = "Social Media";
-                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-                break;
+         case 'social':
+    iisValue = "Social Media";
+    iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}`;
+    break;
+
            case 'Career':
                 iisValue = "Career fair";
                 iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
@@ -551,11 +552,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let iisValue, iisnValue;
 
         switch (medium) {
-            case 'social':
-            case 'Social':
-                iisValue = "Social Media";
-                iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}+Ads`;
-                break;
+           case 'social':
+    case 'Social':
+        iisValue = "Social Media";
+        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}`;
+        break;
             case 'Career':
             case 'career':
                 iisValue = "Career Fair";
