@@ -1,5 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    function getLanguageFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || 'en'; // Default to English
+    }
     const languages = {
         en: {
             about_us: "About Us",
@@ -20,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             generate_qr: "Generate QR Code & Apply Now!",
             intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
             team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            intro_text1: "Find your perfect <span class='highlight'>Job!</span>",
+            intro_text1: "Find your perfect <span class='highlight'><br>Job!</br></span>",
             intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
             share_via: "Share via",
             preferred_language: "Preferred Language",
+            stay_connected: "Stay Connected",
         },
         zh: {
             about_us: "关于我们",
@@ -44,10 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             generate_qr: "生成二维码并立即申请！",
             intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
             team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
-            intro_text1: "找到你的完美 <span class='highlight'>工作！</span>",
+            intro_text1: "找到你的完美 <span class='highlight'><br>工作</br></span>",
             intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
             share_via: "分享",
             preferred_language: "首选语言",
+            stay_connected: "保持联系",
         },
         jp: {
             about_us: "会社概要",
@@ -68,10 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
             generate_qr: "QRコードを作成し、今すぐご応募ください！",
             intro_text: "私たちは<span class='highlight'>誰か</span>を探しています",
             team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
-            intro_text1: "理想の<span class='highlight'>お仕事</span>を見つけましょう！",
+            intro_text1: "理想の<span class='highlight'><br>お仕事</br></span>を見つけましょう！",
             intro_text2: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
             share_via: "共有",
             preferred_language: "首選言語",
+            stay_connected: "つながりを続ける",
         }
     };
 
@@ -105,35 +112,56 @@ document.addEventListener('DOMContentLoaded', () => {
         '.hot-job h2': 'hot_job_content',
         '.apply-btn': 'apply_now',
         '.container h1': 'intro_text2',
-        '.lang label': 'preferred_language',
-        '.loc label': 'choose_location',
-        '.jobt label': 'choose_job_type',
-        '.RAF': 'refer_friend'
+        '.langlabel': 'preferred_language', // Correct selector for "Preferred Language"
+        '.loclabel': 'choose_location',     // Correct selector for "Choose Location"
+        '.jobt': 'choose_job_type',         // Correct selector for "Choose Job Type"
+        '.RAF': 'refer_friend',
+        '.stay': 'stay_connected',
+        '#language-select option[disabled]': 'choose_language', // "Choose your language"
+        '#location-select option[disabled]': 'choose_location', // "Choose your location"
+        '#job-type-select option[disabled]': 'choose_job_type', // "Choose your job type"
     };
-
+      
     const dropdown = document.querySelector('.language-dropdown');
     const selectDropdown = document.getElementById('languages');
     const languageSelect = document.getElementById('language-select');
     const locationSelect = document.getElementById('location-select');
     const jobTypeSelect = document.getElementById('job-type-select');
     const urlParams = new URLSearchParams(window.location.search);
+    
 
-    function updateContent(language) {
-        const langContent = languages[language];
-        if (langContent) {
-            Object.keys(elementsToTranslate).forEach(selector => {
-                const key = elementsToTranslate[selector];
-                const element = document.querySelector(selector);
-                if (element && langContent[key]) {
-                    element.innerHTML = langContent[key];
+// Update content based on language
+function updateContent(language, event = null) {
+    const langContent = languages[language] || languages['en']; // Fallback to English
+    Object.keys(elementsToTranslate).forEach(selector => {
+        const key = elementsToTranslate[selector];
+        const element = document.querySelector(selector);
+        
+        if (element && langContent[key]) {
+            // Check if the element is a label
+            if (element.tagName.toLowerCase() === 'label') {
+                // Update only the text part of the label (excluding its children)
+                const childElements = Array.from(element.childNodes).filter(
+                    node => node.nodeType === Node.TEXT_NODE
+                );
+                if (childElements.length > 0) {
+                    childElements[0].nodeValue = langContent[key];
                 }
-            });
-
-            languageSelect.querySelector('option[disabled]').textContent = langContent.choose_language;
-            locationSelect.querySelector('option[disabled]').textContent = langContent.choose_location;
-            jobTypeSelect.querySelector('option[disabled]').textContent = langContent.choose_job_type;
+            } else {
+                // For other elements, update the innerHTML
+                element.innerHTML = langContent[key];
+            }
         }
-    }
+    });
+}
+
+
+
+// Get current language from URL and update content
+const currentLanguage = getLanguageFromUrl();
+updateContent(currentLanguage);
+
+
 
     function updateURLParameter(param, value) {
         urlParams.set(param, value);
@@ -181,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     populateDropdowns();
 });
-
 
 
 
@@ -392,24 +419,69 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 });
+
+
 // Fetching JSON Data and Populating Dropdowns
 document.addEventListener('DOMContentLoaded', () => {
-    let jsonData = [];
+     let jsonData = [];
     const languageDropdown = document.getElementById('language-select');
     const locationDropdown = document.getElementById('location-select');
     const jobDropdown = document.getElementById('job-type-select');
+
+    // Get language from URL or default to 'en'
+    const lang = getLanguageFromUrl();
+
+    function getLanguageFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || 'en'; // Default to English
+    }
+
+    // Function to populate dropdown with values
+    function populateDropdown(selectElement, options) {
+        selectElement.innerHTML = ''; // Clear existing options
+
+        // Add each option
+        options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.textContent = option;
+            selectElement.appendChild(optionElement);
+        });
+    }
 
     // Fetch JSON data and populate dropdowns
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
             jsonData = data;
-            populateDropdown(languageDropdown, ['Select your language', 'Show All', ...getUniqueValues(data, 'Language')]);
-            populateDropdown(locationDropdown, ['Choose your location', 'Show All', ...getUniqueValues(data, 'Location')]);
-            populateDropdown(jobDropdown, ['Choose your job']); // Initially empty
+
+            // Common dropdown values
+            const languageOptions = ['Show All', ...getUniqueValues(data, 'Language')];
+            const locationOptions = ['Show All', ...getUniqueValues(data, 'Location')];
+            const jobOptions = ['Choose your job']; // Initially empty, add as needed
+         
+            // Conditionally update based on lang
+            if (lang === 'zh') {
+                populateDropdown(languageDropdown, ['Mandarin', ...languageOptions]);
+                populateDropdown(locationDropdown, ['选择您的位置', ...locationOptions]);
+                populateDropdown(jobDropdown, ['选择您的工作类型', ...jobOptions]);
+            } else if (lang === 'jp') {
+                populateDropdown(languageDropdown, ['Japanese', ...languageOptions]);
+                populateDropdown(locationDropdown, ['あなたの場所を選択してください', ...locationOptions]);
+                populateDropdown(jobDropdown, ['職種を選ぶ', ...jobOptions]);
+            } else {
+                populateDropdown(languageDropdown, ['Select your language', ...languageOptions]);
+                populateDropdown(locationDropdown, ['Choose your location', ...locationOptions]);
+                populateDropdown(jobDropdown, jobOptions);
+            }
         })
         .catch(error => console.error('Error loading JSON data:', error));
 
+    // Function to get unique values from JSON data (e.g., for 'Language' or 'Location')
+    function getUniqueValues(data, key) {
+        return [...new Set(data.map(item => item[key]))]; // Get unique values for the given key
+    }
+ 
     // Event listeners for dropdown changes
     languageDropdown.addEventListener('change', handleLanguageChange);
     locationDropdown.addEventListener('change', handleLocationChange);
