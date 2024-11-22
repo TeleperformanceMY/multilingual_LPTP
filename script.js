@@ -79,7 +79,7 @@ function translate(language) {
             back: "后退",
             share_via: "分享",
         },
-        ko: {
+        kr: {
             about_us: "회사소개 / About TP",
             careers: "인재채용 / 커리어",
             stay_connected: "문의/연락처",
@@ -129,7 +129,7 @@ function translate(language) {
             back: "ย้อนกลับ",
             share_via: "แชร์ผ่าน",
         },
-        ms: {
+        my: {
             about_us: "Tentang Kami",
             careers: "Peluang Kerjaya",
             stay_connected: "Terus Berhubung",
