@@ -344,7 +344,10 @@ function generateFinalURL(baseURL, source, medium) {
                     iisValue = "Public Stands";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
-              
+                      case 'grab':
+                    iisValue = "Grab";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
           
           
             default:
@@ -737,6 +740,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
                 case 'public':
                     iisValue = "Public Stands";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+                                   case 'grab':
+                    iisValue = "Grab";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
             default:
