@@ -348,7 +348,10 @@ function generateFinalURL(baseURL, source, medium) {
                     iisValue = "Grab";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
-          
+                          case 'Broadcast':
+                    iisValue = "Broadcast Comms";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
           
             default:
                 console.error("Unknown utm_medium");
@@ -746,6 +749,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     iisValue = "Grab";
                     iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
                     break;
+
+                     iisValue = "Broadcast Comms";
+                    iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                    break;
+          
             default:
                 console.error("Unknown utm_medium");
                 return baseURL;
